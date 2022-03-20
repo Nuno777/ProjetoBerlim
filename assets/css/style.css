@@ -1063,7 +1063,7 @@ section {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #43857a;
+  color: #4d94ff;
 }
 .contact .info .email p {
   padding-top: 5px;
@@ -1159,7 +1159,7 @@ section {
   border-radius: 4px;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: #22d8b6;
+  background: #4d94ff;
 }
 @-webkit-keyframes animate-loading {
   0% {
