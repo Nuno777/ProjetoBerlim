@@ -34,3 +34,15 @@
     margin-right: 100px;
     padding-top: 23px;
 }
+
+.Bus img{
+    width: 300px;
+}
+
+.Taxi img{
+    width: 300px;
+}
+
+h5{
+    padding-top: 15px;
+}
