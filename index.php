@@ -1,93 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Berlim</title>
-    <meta content="berlim" name="description">
-    <meta content="berlim" name="keywords">
+<head>
+  <title>Berlim</title>
+  <?php
+  require_once 'head.php';
+  ?>
+</head>
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<body>
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <?php
+    require_once 'navbar.php';
+    ?>
+  </header>
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Maxim - v4.7.0
-  * Template URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  </head>
-
-  <body>
-
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center">
-      <div class="container d-flex justify-content-between">
-
-        <div class="logo">
-
-          <!-- <h1><a href="index.html">Berlim</a></h1> -->
-          <!-- Uncomment below if you prefer to use an image logo -->
-          <a href="index.html"><img src="assets/img/apple-touch-icon.png" alt=""
-              class="img-fluid"></a>
-        </div>
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
-            <li><a class="nav-link scrollto" href="#about">Monumentos</a></li>
-            <li><a class="nav-link scrollto" href="#services">Hotéis & Restaurantes</a></li>
-            <li><a class="nav-link scrollto" href="#portfolio">Transportes públicos</a></li>
-            <li><a class="nav-link scrollto" href="#team">Eventos</a></li>
-            <li class="dropdown"><a href="#"><span>Bar Night</span> <i
-                  class="bi"></i><!--<i class="bi bi-chevron-down"></i>--></a>
-              <!-- <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul> -->
-            </li>
-            <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-
-      </div>
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex flex-column justify-content-center
+  <section id="hero" class="d-flex flex-column justify-content-center
       align-items-center">
-      <div class="container text-center text-md-left" data-aos="fade-up">
-        <h1>Bem-vindo a Berlim</h1>
-        <h2>Planeia o que vai visitar em Berlim</h2>
-        <a href="#about" class="btn-get-started scrollto">Iniciar</a>
-      </div>
-    </section><!-- End Hero -->
+    <div class="container text-center text-md-left" data-aos="fade-up">
+      <h1>Bem-vindo a Berlim</h1>
+      <h2>Planeia o que vai visitar em Berlim</h2>
+      <a href="#about" class="btn-get-started scrollto">Iniciar</a>
+    </div>
+  </section>
 
-    <main id="main">
+  <main id="main">
 
-      <!-- ======= About Section ======= -->
-      <!--<section id="about" class="about">
+    <!-- ======= About Section ======= -->
+    <!--<section id="about" class="about">
       <div class="container">
 
         <div class="row">
@@ -122,10 +62,10 @@
 
       </div>
     </section> -->
-      <!-- End About Section -->
+    <!-- End About Section -->
 
-      <!-- ======= Steps Section ======= -->
-      <!-- <section id="steps" class="steps section-bg">
+    <!-- ======= Steps Section ======= -->
+    <!-- <section id="steps" class="steps section-bg">
       <div class="container">
 
         <div class="row no-gutters">
@@ -170,10 +110,10 @@
 
       </div>
     </section> -->
-      <!-- End Steps Section -->
+    <!-- End Steps Section -->
 
-      <!-- ======= Features Section ======= -->
-      <!-- <section id="features" class="features">
+    <!-- ======= Features Section ======= -->
+    <!-- <section id="features" class="features">
       <div class="container">
 
         <div class="row">
@@ -233,10 +173,10 @@
 
       </div>
     </section> -->
-      <!-- End Features Section -->
+    <!-- End Features Section -->
 
-      <!-- ======= Services Section ======= -->
-      <!-- <section id="services" class="services section-bg">
+    <!-- ======= Services Section ======= -->
+    <!-- <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -281,10 +221,10 @@
 
       </div>
     </section> -->
-      <!-- End Services Section -->
+    <!-- End Services Section -->
 
-      <!-- ======= Testimonials Section ======= -->
-      <!-- <section id="testimonials" class="testimonials">
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -366,10 +306,10 @@
 
       </div>
     </section> -->
-      <!-- End Testimonials Section -->
+    <!-- End Testimonials Section -->
 
-      <!-- ======= Portfolio Section ======= -->
-      <!-- <section id="portfolio" class="portfolio section-bg">
+    <!-- ======= Portfolio Section ======= -->
+    <!-- <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -520,10 +460,10 @@
 
       </div>
     </section> -->
-      <!-- End Portfolio Section -->
+    <!-- End Portfolio Section -->
 
-      <!-- ======= Team Section ======= -->
-      <!-- <section id="team" class="team">
+    <!-- ======= Team Section ======= -->
+    <!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -609,10 +549,10 @@
 
       </div>
     </section> -->
-      <!-- End Team Section -->
+    <!-- End Team Section -->
 
-      <!-- ======= F.A.Q Section ======= -->
-      <!-- <section id="faq" class="faq section-bg">
+    <!-- ======= F.A.Q Section ======= -->
+    <!-- <section id="faq" class="faq section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -672,10 +612,10 @@
 
       </div>
     </section> -->
-      <!-- End F.A.Q Section -->
+    <!-- End F.A.Q Section -->
 
-      <!-- ======= Contact Section ======= -->
-      <!-- <section id="contact" class="contact">
+    <!-- ======= Contact Section ======= -->
+    <!-- <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -745,88 +685,29 @@
 
       </div>
     </section> -->
-      <!-- End Contact Section -->
 
-    </main><!-- End #main -->
+  </main>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
+  <footer id="footer">
+    <?php
+    require_once 'footer.php';
+    ?>
+  </footer>
 
-            <div class="col-lg-2 col-md-6">
-
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <div class="footer-info">
-                <h3>Berlim</h3>
-                <p>
-                  <br>
-                  <strong>Email:</strong> info@gmail.com<br>
-                </p>
-                <div class="social-links mt-3">
-                  <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                  <a href="mailto:" target="_blank" class="google-plus"><i
-                      class="bx bx-envelope"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Informações</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Contato</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Termos e Condições</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Política de Privacidade</a></li>
-              </ul>
-            </div>
-            <!-- <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web
-                    Development</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Product
-                    Management</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic
-                    Design</a></li>
-              </ul>
-            </div> -->
-            <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h4>Livro De Reclamações</h4>
-              <br>
-              <a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank"><img
-                  src="assets/img/livroReclamacoes.png" alt=""></a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-    </footer><!-- End Footer -->
-
-    <a href="#" class="back-to-top d-flex align-items-center
+  <a href="#" class="back-to-top d-flex align-items-center
       justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-  </body>
+</body>
 
 </html>
