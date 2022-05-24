@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-between">
   <div class="logo">
-    <!-- <h1><a href="index.html">Berlim</a></h1> -->
-    <a href="index.html"><img src="assets/img/apple-touch-icon.png" alt="" class="img-fluid"></a>
+    <h1><a href="index.html">Berlim</h1></a>
+    <!-- <a><img src="assets/img/favicon.png" alt="" class="img-fluid"></a> -->
   </div>
   <nav id="navbar" class="navbar">
     <ul>

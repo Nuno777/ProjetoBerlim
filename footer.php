@@ -5,9 +5,9 @@
       </div>
       <div class="col-lg-3 col-md-6 footer-links">
         <div class="footer-info">
-          <h3>Berlim</h3>
+          <a href="index.php"><img src="assets/img/favicon.png" alt="" height="100px"></a>
           <p>
-            <br>
+
             <strong>Email:</strong> info@gmail.com<br>
           </p>
           <div class="social-links mt-3">
