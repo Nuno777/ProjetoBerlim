@@ -1,4 +1,13 @@
 <div class="container d-flex justify-content-between">
+
+<!-- Image and text 
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    Bootstrap
+  </a>
+</nav>-->
+
   <div class="logo">
     <h1><a href="index.html">Berlim</h1></a>
     <!-- <a><img src="assets/img/favicon.png" alt="" class="img-fluid"></a> -->
