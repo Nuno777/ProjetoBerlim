@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Admin Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assetsAdmin/images/icon/favicon.ico">
     <link rel="stylesheet" href="assetsAdmin/css/bootstrap.min.css">
@@ -27,32 +27,27 @@
             <div class="login-box ptb--100">
                 <form>
                     <div class="login-form-head">
-                        <img src="assets/img/favicon.png" alt="" class="img-fluid" width="100px">
+                        <h4>Admin Dashboard</h4>
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" id="exampleInputEmail1">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
                             <i class="ti-email"></i>
-                            <div class="text-danger"></div>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" id="exampleInputPassword1">
+                            <label for="assword">Password</label>
+                            <input type="password" id="eassword" name="eassword">
                             <i class="ti-lock"></i>
-                            <div class="text-danger"></div>
-                        </div>
-                        <div class="row mb-4 rmber-area">
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Login</button>
+                            <button id="login"  name="login" type="submit">Login</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>
