@@ -1,0 +1,143 @@
+.BerlinEvents{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.img1{
+    width: 400px;
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 15px;
+}
+
+.img2{
+    width: 400px;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.img3{
+    width: 400px;
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 15px;
+}
+
+.img4{
+    width: 400px;
+    float: left;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 15px;
+}
+
+.img5{
+    width: 450px;
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.img6{
+    width: 450px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.img7{
+    width: 450px;
+    float: right;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+}
+
+.primeiroEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 136px;
+    margin-bottom: 20px;
+}
+
+.segundoEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 130px;
+    margin-bottom: 20px;
+}
+
+.terceiroEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 160px;
+    margin-bottom: 20px;
+}
+
+.quartoEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 184px;
+    margin-bottom: 20px;
+}
+
+.quintoEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 124px;
+    margin-bottom: 20px;
+}
+
+.sextoEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 97px;
+    margin-bottom: 20px;
+}
+
+.setimoEvento{
+    border: lightgray;
+    border-width: 3px;
+    border-style: solid;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-bottom: 141px;
+}
+
+h2{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+p{
+    padding-left: 10px;
+}
