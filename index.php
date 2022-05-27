@@ -20,7 +20,7 @@
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Bem-vindo a Berlim</h1>
       <h2>Planeia o que vai visitar em Berlim</h2>
-      <a href="#about" class="btn-get-started scrollto">Iniciar</a>
+      <!-- <a href="#about" class="btn-get-started scrollto">Iniciar</a> -->
     </div>
   </section>
 

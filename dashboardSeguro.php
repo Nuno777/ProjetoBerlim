@@ -111,7 +111,7 @@ if (!isset($_SESSION['authenticated'])) {
                                 <div class="single-table">
                                     <div class="table-responsive">
 
-                                    <table class="table text-center">
+                                        <table class="table text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
                                                     <th scope="col">Primeiro Nome</th>
@@ -131,7 +131,7 @@ if (!isset($_SESSION['authenticated'])) {
                                                 while ($row = $result->fetch_object()) {
                                                     echo "<tr>";
                                                     echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
-                                                    echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>".$row->localidade."</td>";
+                                                    echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
                                                     echo "<td><a href='editseguro.php?email=$row->email' name='edit'><i class='ti-pencil-alt'></i></a></td>";
                                                     echo "<td><a href='deleteseguro.php?email=$row->email' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
