@@ -1,8 +1,13 @@
+<?php
+require_once 'conecao.php';
+$query = "SELECT * FROM hotel";
+$result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Inner Page - Maxim Bootstrap Template</title>
+  <title>Hotéis</title>
   <?php
   require_once 'head.php';
   ?>
@@ -35,29 +40,28 @@
     <section class="inner-page">
       <div class="container">
         <div class="row">
+
           <?php
           while ($row = $result->fetch_object()) {
-            echo "<div class='card' style='width: 18rem'>";
-            echo <img class="card-img-top" src="..." alt="Card image cap">
-           echo <div class="card-body">
-              echo <h5 class="card-title">Card title</h5>
-              echo <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-         echo"</div>";
+            echo "<div class='col-sm-6'>";
+            echo "<div class='card'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
+            echo "<p class='card-text'>Localização: " . $row->localizacao . "</p>";
+            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
           }
           ?>
-        
-          
         </div>
       </div>
     </section>
 
-
   </main>
 
   <footer id="footer">
-  <?php
+    <?php
     require_once 'footer.php';
     ?>
   </footer><!-- End Footer -->

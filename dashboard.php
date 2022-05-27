@@ -101,7 +101,7 @@ if (!isset($_SESSION['authenticated'])) {
         </div>
 
         <div class="main-content-inner">
-            <div class="container">
+<!--             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
@@ -111,7 +111,6 @@ if (!isset($_SESSION['authenticated'])) {
                                         <div class="p-4 d-flex justify-content-between align-items-center">
                                             <div class="seofct-icon"><i class="ti-thumb-up"></i> Likes</div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +135,7 @@ if (!isset($_SESSION['authenticated'])) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
             <script src="assetsAdmin/js/popper.min.js"></script>
             <script src="assetsAdmin/js/bootstrap.min.js"></script>

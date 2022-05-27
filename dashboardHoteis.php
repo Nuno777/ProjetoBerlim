@@ -131,9 +131,9 @@ $result = mysqli_query($conn, $query);
                                                 while ($row = $result->fetch_object()) {
                                                     echo "<tr>";
                                                     echo "<td>" . $row->id_hotel . "</td><td>" . $row->nome . "</td>";
-                                                    echo "<td>" . $row->localicacao . "</td><td>" . $row->quartos . "</td>";
-                                                    echo "<td><a href='edithotel.php?id=$row->id_hotel' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deletehotel.php?id=$row->id_hotel' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td>" . $row->localizacao . "</td><td>" . $row->quartos . "</td>";
+                                                    echo "<td><a href='edithotel.php?id_hotel=$row->id_hotel' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deletehotel.php?id_hotel=$row->id_hotel' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>
