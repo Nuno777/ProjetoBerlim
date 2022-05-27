@@ -84,7 +84,7 @@ $result = mysqli_query($conn, $query);
                                         <a href="javascript:void(0)"><span>Transportes</span></a>
                                         <ul class="submenu">
                                             <li><a href="">Transportes Públicos</a></li>
-                                            <li><a href="">Seguro de Viagens</a></li>
+                                            <li><a href="dashboardSeguro.php">Seguro de Viagens</a></li>
                                         </ul>
                                     </li>
                                     <li class="mega-menu">

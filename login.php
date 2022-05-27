@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+/* Email:admin@gmail.com
+Password:admin */
 require_once 'conecao.php';
 if (isset($_POST['login'])) {
     $email = ($_POST['email']);

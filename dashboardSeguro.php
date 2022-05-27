@@ -63,7 +63,7 @@ if (!isset($_SESSION['authenticated'])) {
                             <nav>
                                 <ul id="nav_menu">
                                     <li>
-                                        <a href="#"><span>Dashboard</span></a>
+                                        <a href="dashboard.php"><span>Dashboard</span></a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)"><span>Monumentos</span></a>
@@ -93,6 +93,7 @@ if (!isset($_SESSION['authenticated'])) {
                         </div>
                     </div>
 
+                    <!-- mobile_menu -->
                     <div class="col-12 d-block d-lg-none">
                         <div id="mobile_menu"></div>
                     </div>
@@ -101,64 +102,74 @@ if (!isset($_SESSION['authenticated'])) {
         </div>
 
         <div class="main-content-inner">
-<!--             <div class="container">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-md-4 mt-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg1">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-thumb-up"></i> Likes</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mt-md-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg2">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-share"></i> Share</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mt-md-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg4">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-share"></i> Share</div>
-                                        </div>
+                    <div class="col-lg-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Seguro de Viagens</h4>
+                                <div class="single-table">
+                                    <div class="table-responsive">
+
+                                        <table class="table text-center">
+                                            <thead class="text-uppercase bg-dark">
+                                                <tr class="text-white">
+                                                    <th scope="col">Primeiro Nome</th>
+                                                    <th scope="col">Ultimo Nome</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Rua</th>
+                                                    <th scope="col">Localidade</th>
+                                                    <th scope="col"></th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                require 'conecao.php';
+                                                $sql = "SELECT * FROM cliente";
+                                                $result = mysqli_query($conn, $sql);
+                                                while ($row = $result->fetch_object()) {
+                                                    echo "<tr>";
+                                                    echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
+                                                    echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
+                                                    echo "<td><a href='editseguro.php?email=$row->email' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deleteseguro.php?email=$row->email' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "</tr>";
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
-            <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
-            <script src="assetsAdmin/js/popper.min.js"></script>
-            <script src="assetsAdmin/js/bootstrap.min.js"></script>
-            <script src="assetsAdmin/js/owl.carousel.min.js"></script>
-            <script src="assetsAdmin/js/metisMenu.min.js"></script>
-            <script src="assetsAdmin/js/jquery.slimscroll.min.js"></script>
-            <script src="assetsAdmin/js/jquery.slicknav.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-            <script src="https://code.highcharts.com/highcharts.js"></script>
-            <script src="https://code.highcharts.com/modules/exporting.js"></script>
-            <script src="https://code.highcharts.com/modules/export-data.js"></script>
-            <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-            <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-            <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-            <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-            <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-            <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-            <script src="assetsAdmin/js/line-chart.js"></script>
-            <script src="assetsAdmin/js/pie-chart.js"></script>
-            <script src="assetsAdmin/js/bar-chart.js"></script>
-            <script src="assetsAdmin/js/maps.js"></script>
-            <script src="assetsAdmin/js/plugins.js"></script>
-            <script src="assetsAdmin/js/scripts.js"></script>
+            </div>
+        </div>
+        <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="assetsAdmin/js/popper.min.js"></script>
+        <script src="assetsAdmin/js/bootstrap.min.js"></script>
+        <script src="assetsAdmin/js/owl.carousel.min.js"></script>
+        <script src="assetsAdmin/js/metisMenu.min.js"></script>
+        <script src="assetsAdmin/js/jquery.slimscroll.min.js"></script>
+        <script src="assetsAdmin/js/jquery.slicknav.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+        <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+        <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+        <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+        <script src="assetsAdmin/js/line-chart.js"></script>
+        <script src="assetsAdmin/js/pie-chart.js"></script>
+        <script src="assetsAdmin/js/bar-chart.js"></script>
+        <script src="assetsAdmin/js/maps.js"></script>
+        <script src="assetsAdmin/js/plugins.js"></script>
+        <script src="assetsAdmin/js/scripts.js"></script>
 </body>
 
 </html>

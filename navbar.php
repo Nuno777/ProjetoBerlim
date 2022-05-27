@@ -17,7 +17,7 @@
       <li class="dropdown"><a href="#"><span>Transportes</span><i class="bi"></i></a>
         <ul>
           <li><a href="#">Transportes Públicos</a></li>
-          <li><a href="#">Seguro de Viagens</a></li>
+          <li><a href="seguro.php">Seguro de Viagens</a></li>
         </ul>
       </li>
       <li><a class="nav-link scrollto" href="#">Eventos</a></li>
