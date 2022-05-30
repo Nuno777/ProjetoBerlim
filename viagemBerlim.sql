@@ -1,5 +1,5 @@
-CREATE DATABASE ViagemBerlim;
-USE ViagemBerlim;
+CREATE DATABASE viagemberlim;
+USE viagemberlim;
 
 create table adm(
 id int primary key auto_increment,
@@ -33,8 +33,8 @@ assunto varchar(50) not null,
 mensagem varchar(400) not null
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE Cliente (
-IDcliente INT UNSIGNED AUTO_INCREMENT,
+create table Cliente (
+IDcliente INT AUTO_INCREMENT,
 nome_primeiro VARCHAR(25) NOT NULL,
 nome_ultimo VARCHAR(25) NOT NULL,
 email VARCHAR(150) NOT NULL,
@@ -46,7 +46,7 @@ nif INT UNSIGNED NOT NULL,
 CONSTRAINT pk_Cliente_IDcliente PRIMARY KEY(IDcliente),
 CONSTRAINT unique_Cliente_email UNIQUE(email),
 CONSTRAINT unique_Cliente_nif UNIQUE(nif)
-) ENGINE = INNODB;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Destino(
 IDdestino INT UNSIGNED AUTO_INCREMENT,
@@ -54,7 +54,7 @@ origem VARCHAR(25) NOT NULL,
 destino VARCHAR(25) NOT NULL,
 datahora DATETIME NOT NULL,
 CONSTRAINT pk_Destino_IDdestino PRIMARY KEY(IDdestino)
-) ENGINE = INNODB;
+)ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Reserva (
 IDreserva INT UNSIGNED AUTO_INCREMENT,
@@ -64,14 +64,14 @@ IDdestino INT UNSIGNED NOT NULL,
 CONSTRAINT pk_Reserva_IDreserva PRIMARY KEY(IDreserva),
 CONSTRAINT fk_Reserva_IDcliente FOREIGN KEY(IDcliente) REFERENCES Cliente(IDcliente),
 CONSTRAINT fk_Reserva_IDdestino FOREIGN KEY(IDdestino) REFERENCES Destino(IDdestino)
-) ENGINE = INNODB;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Telemovel(
 IDcliente INT UNSIGNED,
 telemovel INT NOT NULL,
 CONSTRAINT pk_Telemovel_telemovel PRIMARY KEY(telemovel),
 CONSTRAINT fk_telemovel_IDcliente FOREIGN KEY(IDcliente) REFERENCES Cliente(IDcliente)
-) ENGINE = INNODB;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Evento (
 IDevento INT UNSIGNED AUTO_INCREMENT,
@@ -79,7 +79,7 @@ nome VARCHAR(50) NOT NULL,
 dataevento DATE NOT NULL,
 descricao VARCHAR(1000),
 CONSTRAINT pk_Evento_IDevento PRIMARY KEY(IDevento)
-) ENGINE = INNODB;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Transporte (
 ID_transporte INT UNSIGNED AUTO_INCREMENT,
@@ -87,7 +87,7 @@ transporte VARCHAR(15),
 descricao VARCHAR(1000),
 horarios VARCHAR(1000),
 CONSTRAINT pk_Transporte_ID_transporte PRIMARY KEY(ID_transporte)
-);
+)ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- dados experimentais -- 
 INSERT INTO Cliente

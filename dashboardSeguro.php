@@ -4,6 +4,10 @@ if (!isset($_SESSION['authenticated'])) {
     header('Location: login.php');
     exit(0);
 }
+
+require_once 'conecao.php';
+$query = "SELECT * FROM cliente";
+$result = mysqli_query($conn, $query);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -125,9 +129,6 @@ if (!isset($_SESSION['authenticated'])) {
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                require 'conecao.php';
-                                                $sql = "SELECT * FROM cliente";
-                                                $result = mysqli_query($conn, $sql);
                                                 while ($row = $result->fetch_object()) {
                                                     echo "<tr>";
                                                     echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
