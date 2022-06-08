@@ -35,76 +35,9 @@ $result = mysqli_query($conn, $query);
 
 <body class="body-bg">
     <div class="horizontal-main-wrapper">
-        <div class="mainheader-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <div class="col-sm-6">
-                            <div class="breadcrumbs-area clearfix">
-                                <ul class="breadcrumbs pull-left">
-                                    <li><a href="index.php">Início</a></li>
-                                    <li><span>Dashboard</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9 clearfix text-right">
-                        <div class="clearfix d-md-inline-block d-block">
-                            <div class="m-3">
-                                <a class="btn btn-primary" href="logout.php">
-                                    <h6>Logout</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-area header-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-9  d-none d-lg-block">
-                        <div class="horizontal-menu">
-                            <nav>
-                                <ul id="nav_menu">
-                                    <li>
-                                        <a href="dashboard.php"><span>Dashboard</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span>Monumentos</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span>Hotéis & Restaurantes</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Hotéis</a></li>
-                                            <li><a href="">Restaurantes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"><span>Transportes</span></a>
-                                        <ul class="submenu">
-                                            <li><a href="">Transportes Públicos</a></li>
-                                            <li><a href="dashboardSeguro.php">Seguro de Viagens</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mega-menu">
-                                        <a href="javascript:void(0)"><span>Eventos</span></a>
-                                    </li>
-                                    <li class="mega-menu">
-                                        <a href="javascript:void(0)"><span>Contato</span></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
-                    <!-- mobile_menu -->
-                    <div class="col-12 d-block d-lg-none">
-                        <div id="mobile_menu"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        require_once 'dashboardNavbar.php';
+        ?>
 
         <div class="main-content-inner">
             <div class="container">
@@ -147,29 +80,30 @@ $result = mysqli_query($conn, $query);
                 </div>
             </div>
         </div>
-        <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
-        <script src="assetsAdmin/js/popper.min.js"></script>
-        <script src="assetsAdmin/js/bootstrap.min.js"></script>
-        <script src="assetsAdmin/js/owl.carousel.min.js"></script>
-        <script src="assetsAdmin/js/metisMenu.min.js"></script>
-        <script src="assetsAdmin/js/jquery.slimscroll.min.js"></script>
-        <script src="assetsAdmin/js/jquery.slicknav.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/modules/export-data.js"></script>
-        <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-        <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-        <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-        <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-        <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-        <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-        <script src="assetsAdmin/js/line-chart.js"></script>
-        <script src="assetsAdmin/js/pie-chart.js"></script>
-        <script src="assetsAdmin/js/bar-chart.js"></script>
-        <script src="assetsAdmin/js/maps.js"></script>
-        <script src="assetsAdmin/js/plugins.js"></script>
-        <script src="assetsAdmin/js/scripts.js"></script>
+    </div>
+    <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="assetsAdmin/js/popper.min.js"></script>
+    <script src="assetsAdmin/js/bootstrap.min.js"></script>
+    <script src="assetsAdmin/js/owl.carousel.min.js"></script>
+    <script src="assetsAdmin/js/metisMenu.min.js"></script>
+    <script src="assetsAdmin/js/jquery.slimscroll.min.js"></script>
+    <script src="assetsAdmin/js/jquery.slicknav.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="assetsAdmin/js/line-chart.js"></script>
+    <script src="assetsAdmin/js/pie-chart.js"></script>
+    <script src="assetsAdmin/js/bar-chart.js"></script>
+    <script src="assetsAdmin/js/maps.js"></script>
+    <script src="assetsAdmin/js/plugins.js"></script>
+    <script src="assetsAdmin/js/scripts.js"></script>
 </body>
 
 </html>

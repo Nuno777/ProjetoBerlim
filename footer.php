@@ -8,7 +8,7 @@
           <a href="index.php"><img src="assets/img/favicon.png" alt="" height="100px"></a>
           <p>
 
-            <strong>Email:</strong> info@gmail.com<br>
+            <strong>Email:</strong> supportravel@gmail.com<br>
           </p>
           <div class="social-links mt-3">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

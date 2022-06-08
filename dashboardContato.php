@@ -6,8 +6,9 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 require_once 'conecao.php';
-$query = "SELECT * FROM cliente";
+$query = "SELECT * FROM contatos";
 $result = mysqli_query($conn, $query);
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -44,18 +45,18 @@ $result = mysqli_query($conn, $query);
                     <div class="col-lg-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Seguro de Viagens</h4>
+                                <h4 class="header-title">Contactos</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
-
                                         <table class="table text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
-                                                    <th scope="col">Primeiro Nome</th>
-                                                    <th scope="col">Ultimo Nome</th>
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Email</th>
-                                                    <th scope="col">Rua</th>
-                                                    <th scope="col">Localidade</th>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">Telefone</th>
+                                                    <th scope="col">Assunto</th>
+                                                    <th scope="col">Mensagem</th>
                                                     <th scope="col"></th>
                                                     <th scope="col"></th>
                                                 </tr>
@@ -64,10 +65,11 @@ $result = mysqli_query($conn, $query);
                                                 <?php
                                                 while ($row = $result->fetch_object()) {
                                                     echo "<tr>";
-                                                    echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
-                                                    echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
-                                                    echo "<td><a href='editseguro.php?email=$row->email' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deleteseguro.php?email=$row->email' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td>" . $row->id_cont . "</td><td>" . $row->email . "</td>";
+                                                    echo "<td>" . $row->nome . "</td><td>" . $row->telefone . "</td>";
+                                                    echo "<td>" . $row->assunto . "</td><td>" . $row->mensagem . "</td>";
+                                                    echo "<td><a href='edithotel.php?id_cont=$row->id_cont' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deletehotel.php?id_cont=$row->id_cont' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>

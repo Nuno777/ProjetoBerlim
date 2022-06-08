@@ -1,6 +1,41 @@
 <?php
 require_once 'conecao.php';
+$email = array_key_exists('email', $_POST) ? $_POST['email'] : "";
+$nome = array_key_exists('nome', $_POST) ? $_POST['nome'] : "";
+$tel = array_key_exists('tel', $_POST) ? $_POST['tel'] : "";
+$assunto = array_key_exists('assunto', $_POST) ? $_POST['assunto'] : "";
+$mensagem = array_key_exists('mensagem', $_POST) ? $_POST['mensagem'] : "";
+$msg_erro = "";
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if ($email == "" || $nome == "" || $assunto == "" || $mensagem == "")
+    $msg_erro = "Campos não preenchidos";
+  else {
+    require_once 'conecao.php';
+    if ($conn->connect_errno) {
+      $code = $conn->connect_errno;
+      $message = $conn->connect_error;
+      $msg_erro = "Falha na ligação à BaseDados ($code $message)!";
+    } else {
+      // descontaminar variáveis
+      $email = $conn->real_escape_string($email);
+      $nome = $conn->real_escape_string($nome);
+
+      /* 2: executar query... */
+      $query = "INSERT INTO `contatos` (`email`, `nome`, `telefone`, `assunto`, `mensagem`) VALUES ('$email', '$nome', '$tel', '$assunto', '$mensagem')";
+
+      $sucesso_query = $conn->query($query);
+      if ($sucesso_query) {
+        header("Location: contato.php");
+        exit(0);
+      } else {
+        $code = $conn->errno; // error code of the most recent operation
+        $message = $conn->error; // error message of the most recent op.
+        $msg_erro = "Falha na query! ($code $message)";
+      }
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,24 +76,24 @@ require_once 'conecao.php';
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Phone</h5>
-                <p class="card-text">support@gmail.com</p>
+                <h5 class="card-title">Email</h5>
+                <p class="card-text">supportravel@gmail.com</p>
               </div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Phone</h5>
-                <p class="card-text">913455033</p>
+                <h5 class="card-title">Telefone</h5>
+                <p class="card-text">+351 211202020</p>
               </div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Phone</h5>
-                <p class="card-text">913455033</p>
+                <h5 class="card-title">Endereço</h5>
+                <p class="card-text">Avenida do Brasil, Lisboa</p>
               </div>
             </div>
           </div>
@@ -69,57 +104,43 @@ require_once 'conecao.php';
 
     <section class="inner-page">
       <div class="container">
-        <form id="form" action="" method="post" class="row g-3">
-          <div class="col-md-6" id="name-container">
-            <label for="nome" class="form-label">Primeiro
-              Nome</label>
-            <input type="text" class="form-control" id="nome">
-            <div id="validarfeed" class="invalid-feedback invalid-name">
-            </div>
+        <form id="cont" action="contato.php" method="POST" class="row g-3" enctype="multipart/form-data">
 
-          </div>
-          <div class="col-md-6" id="apelido-container">
-            <label for="apelido" class="form-label">Ultimo
-              Nome</label>
-            <input type="text" class="form-control" id="apelido">
-            <div id="validarfeed" class="invalid-feedback invalid-apelido">
-            </div>
-          </div>
           <div class="col-md-12" id="email-container">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="email" name="email">
             <div id="validarfeed" class="invalid-feedback invalid-email">
             </div>
           </div>
-          <div class="col-md-12" id="endereco-container">
-            <label for="endereco" class="form-label">Endereço <span class="span-contat">(opcional)</span></label>
-            <input type="text" class="form-control" id="endereco">
-            <div id="validarfeed" class="valid-feedback invalid-endereco">
+
+          <div class="col-md-6" id="name-container">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome">
+            <div id="validarfeed" class="invalid-feedback invalid-name">
             </div>
           </div>
-          <div class="col-md-6" id="gen-container">
-            <label for="gen" class="form-label">Genero</label>
-            <select class="form-select" id="gen">
-              <option selected disabled value="escolha">Escolha</option>
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-              <option value="outro">Outro</option>
-            </select>
-            <div id="validarfeed" class="invalid-feedback invalid-genero">
-            </div>
-          </div>
+
           <div class="col-md-6" id="tel-container">
             <label for="tel" class="form-label">Telemovel <span class="span-contat">(opcional)</span></label>
-            <input type="tel" maxlength="9" class="form-control" id="tel">
+            <input type="tel" maxlength="9" class="form-control" id="tel" name="tel">
             <div id="validarfeed" class="valid-feedback invalid-telefone">
             </div>
           </div>
+
+          <div class="col-md-12" id="assunto-container">
+            <label for="assunto" class="form-label">Assunto</label>
+            <input type="text" class="form-control" id="assunto" name="assunto">
+            <div id="validarfeed" class="valid-feedback invalid-assunto">
+            </div>
+          </div>
+
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="mensagem"></textarea>
+            <textarea class="form-control" id="mensagem" name="mensagem"></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>
+
           <div class="col-md-12">
             <button class="btn btn-primary w-100" type="submit">Enviar</button>
           </div>
