@@ -40,10 +40,20 @@ $result = mysqli_query($conn, $query);
     <section class="inner-page">
       <div class="container">
         <div class="row">
-
           <?php
           while ($row = $result->fetch_object()) {
-            echo "<div class='col-sm-6'>";
+            echo "<div class='col-sm-3'>";
+            echo "<div class='card' style='width: 18rem;'>";
+            echo "<img class='card-img-top' src='' alt='Image'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
+            echo "<p class='card-text'>" . $row->localizacao . "</p>";
+            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+
+            /*echo "<div class='col-sm-4'>";
             echo "<div class='card'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $row->nome . "</h5>";
@@ -51,7 +61,7 @@ $result = mysqli_query($conn, $query);
             echo "<a href='#' class='btn btn-primary'>Contactar</a>";
             echo "</div>";
             echo "</div>";
-            echo "</div>";
+            echo "</div>";*/
           }
           ?>
         </div>

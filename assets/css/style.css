@@ -3,6 +3,11 @@ body {
   color: #444444;
 }
 
+.span-contat {
+  color: gray;
+  font-size: 12px;
+}
+
 a {
   color: #0066ff;
   text-decoration: none;
