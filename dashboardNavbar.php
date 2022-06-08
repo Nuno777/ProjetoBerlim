@@ -1,3 +1,12 @@
+<?php
+require_once 'conecao.php';
+$query = "SELECT nome FROM adm WHERE id";
+$queryadm = mysqli_query($conn, $query);
+if ($queryadm->num_rows) {
+    $row = $queryadm->fetch_object();
+    $adm = $row->nome;
+}
+?>
 <div class="mainheader-area">
     <div class="container">
         <div class="row align-items-center">
@@ -5,8 +14,9 @@
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
                         <ul class="breadcrumbs pull-left">
-                            <li><a href="index.php">Início</a></li>
-                            <li><span>Dashboard</span></li>
+                            <p><?php echo $adm;?></p>
+                            <!-- <li><a href="index.php">Início</a></li>
+                            <li><span>Dashboard</span></li> -->
                         </ul>
                     </div>
                 </div>
@@ -58,6 +68,16 @@
                             </li>
                         </ul>
                     </nav>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <ul class="breadcrumbs pull-left">
+                            <li><a href="index.php">Início</a></li>
+                            <li><span>Dashboard</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
