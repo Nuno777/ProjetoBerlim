@@ -110,14 +110,13 @@ if (!isset($_SESSION['authenticated'])) {
                                 <h4 class="header-title">Seguro de Viagens</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
-
                                         <table class="table text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
                                                     <th scope="col">Primeiro Nome</th>
                                                     <th scope="col">Ultimo Nome</th>
                                                     <th scope="col">Email</th>
-                                                    <th scope="col">Rua</th>
+                                                    <th scope="col">Morada</th>
                                                     <th scope="col">Localidade</th>
                                                     <th scope="col"></th>
                                                     <th scope="col"></th>
@@ -132,13 +131,13 @@ if (!isset($_SESSION['authenticated'])) {
                                                     echo "<tr>";
                                                     echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
                                                     echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
-                                                    echo "<td><a href='editseguro.php?email=$row->email' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deleteseguro.php?email=$row->email' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td><a href='editseguro.php?IDcliente=$row->IDcliente' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deleteseguro.php?IDcliente=$row->IDcliente' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>
                                             </tbody>
-                                        </table>
+
                                     </div>
                                 </div>
                             </div>

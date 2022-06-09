@@ -41,32 +41,46 @@ $result = mysqli_query($conn, $query);
       <div class="container">
         <div class="row">
 
-          <table class="table text-center">
-            <thead class="text-uppercase bg-dark">
-              <tr class="text-white">
-                <th scope="col">Primeiro Nome</th>
-                <th scope="col">Ultimo Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Rua</th>
-                <th scope="col">Localidade</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              require 'conecao.php';
-              $sql = "SELECT * FROM cliente";
-              $result = mysqli_query($conn, $sql);
-              while ($row = $result->fetch_object()) {
-                echo "<tr>";
-                echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
-                echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
-                echo "</tr>";
-              }
-              ?>
-            </tbody>
-          </table>
+          <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title">Pacote básico</h5>
+              <p class="card-text">Seguro básico, com a proteção de bagagens</p>
+              <ul>
+                <li class="card-text">Proteção Covid-19 incluida</li>
+                <li class="card-text">Despesas médicas e medicamentos</li>
+                <li class="card-text">Bagagem</li>
+              </ul>
+              <a href="formSeguro.php" class="btn btn-primary">Comprar: 29,99€</a>
+            </div>
+          </div>
+
+          <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title">Pacote Travel+</h5>
+              <p class="card-text">Seguro que contem cancelamento ou interrupção da viagem</p>
+              <ul>
+                <li class="card-text">Proteção Covid-19 incluida</li>
+                <li class="card-text">Despesas médicas e medicamentos</li>
+                <li class="card-text">Bagagem</li>
+                <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
+              </ul>
+              <a href="formSeguro.php" class="btn btn-primary">Comprar: 34,99</a>
+            </div>
+          </div>
+          <div class="card w-75">
+            <div class="card-body">
+              <h5 class="card-title">Pacote Travel+</h5>
+              <p class="card-text">Seguro que contem toda a segurança e tranqualidade</p>
+              <ul>
+                <li class="card-text">Proteção Covid-19 incluida</li>
+                <li class="card-text">Despesas médicas e medicamentos</li>
+                <li class="card-text">Bagagem</li>
+                <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
+                <li class="card-text">Cancelamento positivo Covid-19</li>
+              </ul>
+              <a href="formSeguro.php" class="btn btn-primary">Comprar: 39,99</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
