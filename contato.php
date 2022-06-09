@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // descontaminar variáveis
       $email = $conn->real_escape_string($email);
       $nome = $conn->real_escape_string($nome);
-
+      $assunto = $conn->real_escape_string($assunto);
+      $mensagem = $conn->real_escape_string($mensagem);
       /* 2: executar query... */
       $query = "INSERT INTO `contatos` (`email`, `nome`, `telefone`, `assunto`, `mensagem`) VALUES ('$email', '$nome', '$tel', '$assunto', '$mensagem')";
 
@@ -60,10 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Contato</h2>
+          <h2>Contactar-nos</h2>
           <ol>
             <li><a href="index.php">Início</a></li>
-            <li>Contato</li>
+            <li>Contacto</li>
           </ol>
         </div>
 
@@ -108,14 +109,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="email-container">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email">
+            <input type="email" class="form-control" id="email" name="email" required>
             <div id="validarfeed" class="invalid-feedback invalid-email">
             </div>
           </div>
 
           <div class="col-md-6" id="name-container">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome">
+            <input type="text" class="form-control" id="nome" name="nome" required>
             <div id="validarfeed" class="invalid-feedback invalid-name">
             </div>
           </div>
@@ -129,14 +130,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="assunto-container">
             <label for="assunto" class="form-label">Assunto</label>
-            <input type="text" class="form-control" id="assunto" name="assunto">
+            <input type="text" class="form-control" id="assunto" name="assunto" required>
             <div id="validarfeed" class="valid-feedback invalid-assunto">
             </div>
           </div>
 
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="mensagem" name="mensagem"></textarea>
+            <textarea class="form-control" id="mensagem" name="mensagem" required></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>
