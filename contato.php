@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-2">
             <button class="btn btn-primary w-100" type="submit">Enviar</button>
           </div>
         </form>

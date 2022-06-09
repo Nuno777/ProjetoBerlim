@@ -14,7 +14,7 @@ if ($queryadm->num_rows) {
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
                         <ul class="breadcrumbs pull-left">
-                            <p><?php echo $adm;?></p>
+                            <p><?php echo "<h4>".$adm."</h4>";?></p>
                             <!-- <li><a href="index.php">Início</a></li>
                             <li><span>Dashboard</span></li> -->
                         </ul>
