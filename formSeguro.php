@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <section class="inner-page">
             <div class="container">
-                <form id="cont" action="contato.php" method="POST" class="row g-3" enctype="multipart/form-data">
+                <form id="cont" action="seguro.php" method="POST" class="row g-3" enctype="multipart/form-data">
 
                     <div class="col-md-6" id="prinome-container">
                         <label for="prinome" class="form-label">Primeiro Nome</label>
@@ -90,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="col-md-6" id="tel-container">
-                        <label for="tel" class="form-label">Ultimo Nome</label>
-                        <input type="text" maxlength="9" class="form-control" id="tel" name="tel" required>
+                        <label for="ultnome" class="form-label">Ultimo Nome</label>
+                        <input type="text" maxlength="9" class="form-control" id="ultnome" name="ultnome" required>
                         <div id="validarfeed" class="valid-feedback invalid-telefone">
                         </div>
                     </div>
@@ -104,29 +104,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="col-md-12" id="assunto-container">
-                        <label for="assunto" class="form-label">Morada</label>
-                        <input type="text" class="form-control" id="assunto" name="assunto" required>
+                        <label for="rua" class="form-label">Morada</label>
+                        <input type="text" class="form-control" id="rua" name="rua" required>
                         <div id="validarfeed" class="valid-feedback invalid-assunto">
                         </div>
                     </div>
 
                     <div class="col-md-12" id="assunto-container">
-                        <label for="assunto" class="form-label">Localidade</label>
-                        <input type="text" class="form-control" id="assunto" name="assunto" required>
+                        <label for="localidade" class="form-label">Localidade</label>
+                        <input type="text" class="form-control" id="localidade" name="localidade" required>
                         <div id="validarfeed" class="valid-feedback invalid-assunto">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="name-container">
-                        <label for="nome" class="form-label">Código Postal</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8" required>
+                        <label for="postal" class="form-label">Código Postal</label>
+                        <input type="text" class="form-control" id="postal" name="postal" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8" required>
                         <div id="validarfeed" class="invalid-feedback invalid-name">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="tel-container">
-                        <label for="tel" class="form-label">NIF</label>
-                        <input type="text" maxlength="9" class="form-control" id="tel" name="tel" required>
+                        <label for="nif" class="form-label">NIF</label>
+                        <input type="text" maxlength="9" class="form-control" id="nif" name="nif" required>
                         <div id="validarfeed" class="valid-feedback invalid-telefone">
                         </div>
                     </div>
