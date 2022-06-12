@@ -74,7 +74,7 @@ if ($queryadm->num_rows) {
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
                         <ul class="breadcrumbs pull-left">
-                            <li><a href="index.php">Início</a></li>
+                            <li><a href="dashboard.php">Início</a></li>
                             <li><span>Dashboard</span></li>
                         </ul>
                     </div>

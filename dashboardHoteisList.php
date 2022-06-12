@@ -42,39 +42,39 @@ $result = mysqli_query($conn, $query);
         <div class="main-content-inner">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-md-4 mt-5 mb-3">
-                                <a href="dashboardHoteisNew.php">
-                                    <div class="card">
-                                        <div class="seo-fact sbg1">
-                                            <div class="p-4 d-flex justify-content-between align-items-center">
-                                                <div class="seofct-icon"><i class="ti-home"></i>Post Hotel</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-4 mt-md-5 mb-3">
-                                <a href="dashboardHoteisList.php">
-                                    <div class="card">
-                                        <div class="seo-fact sbg2">
-                                            <div class="p-4 d-flex justify-content-between align-items-center">
-                                                <div class="seofct-icon"><i class="ti-list"></i>Listar Hotéis</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!--  <div class="col-md-4 mt-md-5 mb-3">
-                                <div class="card">
-                                    <div class="seo-fact sbg3">
-                                        <div class="p-4 d-flex justify-content-between align-items-center">
-                                            <div class="seofct-icon"><i class="ti-list"></i>Listar Users</div>
-                                        </div>
+                    <div class="col-lg-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title ">Hotéis</h4>
+                                <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table text-center">
+                                            <thead class="text-uppercase bg-dark">
+                                                <tr class="text-white">
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">Localicação</th>
+                                                    <th scope="col">quartos</th>
+                                                    <th scope="col"></th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                while ($row = $result->fetch_object()) {
+                                                    echo "<tr>";
+                                                    echo "<td>" . $row->id_hotel . "</td><td>" . $row->nome . "</td>";
+                                                    echo "<td>" . $row->localizacao . "</td><td>" . $row->quartos . "</td>";
+                                                    echo "<td><a href='edithotel.php?id_hotel=$row->id_hotel' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deletehotel.php?id_hotel=$row->id_hotel' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "</tr>";
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
