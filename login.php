@@ -10,12 +10,12 @@ if (isset($_POST['login'])) {
     $sql = "SELECT * FROM adm WHERE email='$email' AND pass='$password'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result)) {
-        $_SEESION['message'] = "Login com sucesso.";
-        $_SEESION['email'] = $email;
-        $_SEESION['password'] = $password;
+        $_SESSION['message'] = "Login com sucesso.";
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
         header("location: dashboard.php");
     } else {
-        $_SEESION['message'] = "Email ou Password incorreta, tente novamente.";
+        $_SESSION['message'] = "Email ou Password incorreta, tente novamente.";
     }
 }
 ?>

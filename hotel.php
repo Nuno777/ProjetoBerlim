@@ -42,9 +42,10 @@ $result = mysqli_query($conn, $query);
         <div class="row">
           <?php
           while ($row = $result->fetch_object()) {
+            //$fotohotel = $row->foto;
             echo "<div class='col-sm-3'>";
             echo "<div class='card' style='width: 18rem;'>";
-            echo "<img class='card-img-top' src='' alt='Image'>";
+            echo "<img class='' alt='Image'>";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $row->nome . "</h5>";
             echo "<p class='card-text'>" . $row->localizacao . "</p>";
