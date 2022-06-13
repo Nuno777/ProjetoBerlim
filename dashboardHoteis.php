@@ -6,8 +6,6 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 require_once 'conecao.php';
-$query = "SELECT * FROM hotel";
-$result = mysqli_query($conn, $query);
 
 ?>
 <!doctype html>

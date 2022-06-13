@@ -11,18 +11,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($email == "" || $nome == "" || $assunto == "" || $mensagem == "")
     $msg_erro = "Campos não preenchidos";
   else {
-    require_once 'conecao.php';
     if ($conn->connect_errno) {
       $code = $conn->connect_errno;
       $message = $conn->connect_error;
       $msg_erro = "Falha na ligação à BaseDados ($code $message)!";
     } else {
-      // descontaminar variáveis
+
       $email = $conn->real_escape_string($email);
       $nome = $conn->real_escape_string($nome);
       $assunto = $conn->real_escape_string($assunto);
       $mensagem = $conn->real_escape_string($mensagem);
-      /* 2: executar query... */
+
       $query = "INSERT INTO `contatos` (`email`, `nome`, `telefone`, `assunto`, `mensagem`) VALUES ('$email', '$nome', '$tel', '$assunto', '$mensagem')";
 
       $sucesso_query = $conn->query($query);
@@ -30,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: contato.php");
         exit(0);
       } else {
-        $code = $conn->errno; // error code of the most recent operation
-        $message = $conn->error; // error message of the most recent op.
+        $code = $conn->errno; 
+        $message = $conn->error; 
         $msg_erro = "Falha na query! ($code $message)";
       }
     }
@@ -42,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="en">
 
 <head>
-  <title>Contato</title>
+  <title>Contacto</title>
   <?php
   require_once 'head.php';
   ?>

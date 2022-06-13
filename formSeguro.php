@@ -7,37 +7,28 @@ $rua = array_key_exists('rua', $_POST) ? $_POST['rua'] : "";
 $localidade = array_key_exists('localidade', $_POST) ? $_POST['localidade'] : "";
 $postal = array_key_exists('postal', $_POST) ? $_POST['postal'] : "";
 $nif = array_key_exists('nif', $_POST) ? $_POST['nif'] : "";
+$pacote = array_key_exists('pacote', $_POST) ? $_POST['pacote'] : "";
 $msg_erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($prinome == "" || $ultnome == "" || $email == "" || $rua == "" || $localidade == "" || $postal == "" || $nif == "")
         $msg_erro = "Campos não preenchidos";
     else {
-        require_once 'conecao.php';
         if ($conn->connect_errno) {
             $code = $conn->connect_errno;
             $message = $conn->connect_error;
             $msg_erro = "Falha na ligação à BaseDados ($code $message)!";
         } else {
-            // descontaminar variáveis
-            $prinome = $conn->real_escape_string($prinome);
-            $ultnome = $conn->real_escape_string($ultnome);
-            $email = $conn->real_escape_string($email);
-            $rua = $conn->real_escape_string($rua);
-            $localidade = $conn->real_escape_string($localidade);
-            $postal = $conn->real_escape_string($postal);
-            $nif = $conn->real_escape_string($nif);
 
-            /* 2: executar query... */
-            $query = "INSERT INTO Cliente (nome_primeiro, nome_ultimo, email, rua, localidade, cpostal, nif) VALUES ('$prinome', '$ultnome', '$email', '$rua', '$localidade', $postal', $nif')";
+            $query = "INSERT INTO `cliente` (`nome_primeiro`, `nome_ultimo` , `email`, `rua`, `localidade`, `cpostal`, `nif`,`pacote`) VALUES ('$prinome', '$ultnome', '$email', '$rua', '$localidade', '$postal', '$nif','$pacote')";
 
-            $sucesso_query = $conn->query($query);
-            if ($sucesso_query) {
+            $queryseguro = $conn->query($query);
+            if ($queryseguro) {
                 header("Location: seguro.php");
                 exit(0);
             } else {
-                $code = $conn->errno; // error code of the most recent operation
-                $message = $conn->error; // error message of the most recent op.
+                $code = $conn->errno;
+                $message = $conn->error;
                 $msg_erro = "Falha na query! ($code $message)";
             }
         }
@@ -80,19 +71,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <section class="inner-page">
             <div class="container">
-                <form id="cont" action="contato.php" method="POST" class="row g-3" enctype="multipart/form-data">
+                <form id="seguro" action="formSeguro.php" method="POST" class="row g-3" enctype="multipart/form-data">
 
                     <div class="col-md-6" id="prinome-container">
                         <label for="prinome" class="form-label">Primeiro Nome</label>
                         <input type="text" class="form-control" id="prinome" name="prinome" required>
-                        <div id="validarfeed" class="invalid-feedback invalid-name">
+                        <div id="validarfeed" class="invalid-feedback invalid-prinome">
                         </div>
                     </div>
 
-                    <div class="col-md-6" id="tel-container">
-                        <label for="tel" class="form-label">Ultimo Nome</label>
-                        <input type="text" maxlength="9" class="form-control" id="tel" name="tel" required>
-                        <div id="validarfeed" class="valid-feedback invalid-telefone">
+                    <div class="col-md-6" id="ultnome-container">
+                        <label for="ultnome" class="form-label">Ultimo Nome</label>
+                        <input type="text" class="form-control" id="ultnome" name="ultnome" required>
+                        <div id="validarfeed" class="valid-feedback invalid-ultnome">
                         </div>
                     </div>
 
@@ -103,32 +94,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                     </div>
 
-                    <div class="col-md-12" id="assunto-container">
-                        <label for="assunto" class="form-label">Morada</label>
-                        <input type="text" class="form-control" id="assunto" name="assunto" required>
-                        <div id="validarfeed" class="valid-feedback invalid-assunto">
+                    <div class="col-md-12" id="rua-container">
+                        <label for="rua" class="form-label">Morada</label>
+                        <input type="text" class="form-control" id="rua" name="rua" required>
+                        <div id="validarfeed" class="valid-feedback invalid-rua">
                         </div>
                     </div>
 
-                    <div class="col-md-12" id="assunto-container">
-                        <label for="assunto" class="form-label">Localidade</label>
-                        <input type="text" class="form-control" id="assunto" name="assunto" required>
-                        <div id="validarfeed" class="valid-feedback invalid-assunto">
+                    <div class="col-md-6" id="localidade-container">
+                        <label for="localidade" class="form-label">Localidade</label>
+                        <input type="text" class="form-control" id="localidade" name="localidade">
+                        <div id="validarfeed" class="valid-feedback invalid-localidade">
                         </div>
                     </div>
 
-                    <div class="col-md-6" id="name-container">
-                        <label for="nome" class="form-label">Código Postal</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8" required>
-                        <div id="validarfeed" class="invalid-feedback invalid-name">
+                    <div class="col-md-6" id="postal-container">
+                        <label for="postal" class="form-label">Código Postal</label>
+                        <input type="text" class="form-control" id="postal" name="postal" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8">
+                        <div id="validarfeed" class="invalid-feedback invalid-postal">
                         </div>
                     </div>
 
-                    <div class="col-md-6" id="tel-container">
-                        <label for="tel" class="form-label">NIF</label>
-                        <input type="text" maxlength="9" class="form-control" id="tel" name="tel" required>
-                        <div id="validarfeed" class="valid-feedback invalid-telefone">
+                    <div class="col-md-6" id="nif-container">
+                        <label for="nif" class="form-label">NIF</label>
+                        <input type="text" maxlength="9" class="form-control" id="nif" name="nif">
+                        <div id="validarfeed" class="valid-feedback invalid-nif">
                         </div>
+                    </div>
+
+                    <div class="col-md-6" id="pacote-container">
+                        <label for="pacote" class="form-label">Pacote</label>
+                        <select class="form-select" id="pacote" name="pacote">
+                            <option selected value="Travel">Travel</option>
+                            <option value="Travel Plus">Travel Plus</option>
+                            <option value="Travel Ultra">Travel Ultra</option>
+                        </select>
                     </div>
 
                     <div class="col-md-1">

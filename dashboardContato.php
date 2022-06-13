@@ -6,7 +6,8 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 require_once 'conecao.php';
-$query = "SELECT * FROM contatos";
+
+$query = "SELECT * FROM contatos ORDER BY id_cont";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -56,7 +57,6 @@ $result = mysqli_query($conn, $query);
                                                     <th scope="col">Nome</th>
                                                     <th scope="col">Telefone</th>
                                                     <th scope="col">Assunto</th>
-                                                    <th scope="col">Mensagem</th>
                                                     <th scope="col"></th>
                                                     <th scope="col"></th>
                                                 </tr>
@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $query);
                                                     echo "<tr>";
                                                     echo "<td>" . $row->id_cont . "</td><td>" . $row->email . "</td>";
                                                     echo "<td>" . $row->nome . "</td><td>" . $row->telefone . "</td>";
-                                                    echo "<td>" . $row->assunto . "</td><td>" . $row->mensagem . "</td>";
+                                                    echo "<td>" . $row->assunto . "</td>";
                                                     echo "<td><a href='editcontato.php?id_cont=$row->id_cont' name='edit'><i class='ti-pencil-alt'></i></a></td>";
                                                     echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";

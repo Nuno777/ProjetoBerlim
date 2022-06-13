@@ -1,13 +1,8 @@
-<?php
-require_once 'conecao.php';
-$query = "SELECT * FROM hotel";
-$result = mysqli_query($conn, $query);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Hotéis</title>
+  <title>Seguro de Viagens</title>
   <?php
   require_once 'head.php';
   ?>
@@ -18,11 +13,10 @@ $result = mysqli_query($conn, $query);
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
@@ -43,7 +37,7 @@ $result = mysqli_query($conn, $query);
 
           <div class="card w-75">
             <div class="card-body">
-              <h5 class="card-title">Pacote básico</h5>
+              <h5 class="card-title">Pacote Travel</h5>
               <p class="card-text">Seguro básico, com a proteção de bagagens</p>
               <ul>
                 <li class="card-text">Proteção Covid-19 incluida</li>
@@ -56,7 +50,7 @@ $result = mysqli_query($conn, $query);
 
           <div class="card w-75">
             <div class="card-body">
-              <h5 class="card-title">Pacote Travel+</h5>
+              <h5 class="card-title">Pacote Travel Plus</h5>
               <p class="card-text">Seguro que contem cancelamento ou interrupção da viagem</p>
               <ul>
                 <li class="card-text">Proteção Covid-19 incluida</li>
@@ -69,7 +63,7 @@ $result = mysqli_query($conn, $query);
           </div>
           <div class="card w-75">
             <div class="card-body">
-              <h5 class="card-title">Pacote Travel+</h5>
+              <h5 class="card-title">Pacote Travel Ultra</h5>
               <p class="card-text">Seguro que contem toda a segurança e tranqualidade</p>
               <ul>
                 <li class="card-text">Proteção Covid-19 incluida</li>
