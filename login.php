@@ -7,8 +7,8 @@ if (isset($_POST['login'])) {
     $email = ($_POST['email']);
     $password = ($_POST['password']);
     $password = hash('sha512', $password); //segurança
-    $sql = "SELECT * FROM adm WHERE email='$email' AND pass='$password'";
-    $result = mysqli_query($conn, $sql);
+    $query = "SELECT * FROM adm WHERE email='$email' AND pass='$password'";
+    $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result)) {
         $_SESSION['message'] = "Login com sucesso.";
         $_SESSION['email'] = $email;

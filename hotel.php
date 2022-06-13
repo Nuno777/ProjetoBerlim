@@ -1,7 +1,7 @@
 <?php
 require_once 'conecao.php';
-$query = "SELECT * FROM hotel";
-$result = mysqli_query($conn, $query);
+$q = "SELECT * FROM hotel";
+$result = mysqli_query($conn, $q);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +18,9 @@ $result = mysqli_query($conn, $query);
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
-
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
@@ -42,10 +40,13 @@ $result = mysqli_query($conn, $query);
         <div class="row">
           <?php
           while ($row = $result->fetch_object()) {
-            //$fotohotel = $row->foto;
+            $foto = $row->foto_hotel;
+            if ($foto == null) {
+              $foto = 'uploads/defaulthotel.jpg';
+            }
             echo "<div class='col-sm-3'>";
             echo "<div class='card' style='width: 18rem;'>";
-            echo "<img class='' alt='Image'>";
+            echo "<img class='card-img-top' src='$foto' alt='Image' >";
             echo "<div class='card-body'>";
             echo "<h5 class='card-title'>" . $row->nome . "</h5>";
             echo "<p class='card-text'>" . $row->localizacao . "</p>";
@@ -53,16 +54,6 @@ $result = mysqli_query($conn, $query);
             echo "</div>";
             echo "</div>";
             echo "</div>";
-
-            /*echo "<div class='col-sm-4'>";
-            echo "<div class='card'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
-            echo "<p class='card-text'>Localização: " . $row->localizacao . "</p>";
-            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";*/
           }
           ?>
         </div>

@@ -12,8 +12,8 @@ if (strlen($password) == 0)
     $_SESSION['errors']['password'] = 'Empty password';
 if (count($_SESSION['errors']) == 0) {
     $email = mysqli_real_escape_string($conn, $email);
-    $sql = "SELECT email,pass FROM adm WHERE email='$email'";
-    $result = mysqli_query($conn, $sql);
+    $query = "SELECT email,pass FROM adm WHERE email='$email'";
+    $result = mysqli_query($conn, $query);
     if ($result && $result->num_rows != 0) {
         $password = hash('sha512', $password);
         if ($result->fetch_object()->pass == $password) {
