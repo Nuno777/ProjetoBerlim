@@ -6,7 +6,6 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 require_once 'conecao.php';
-
 $query = "SELECT * FROM contatos ORDER BY id_cont";
 $result = mysqli_query($conn, $query);
 

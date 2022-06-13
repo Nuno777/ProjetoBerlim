@@ -6,7 +6,7 @@ if (!isset($_SESSION['authenticated'])) {
 }
 
 require_once 'conecao.php';
-$query = "SELECT * FROM cliente";
+$query = "SELECT * FROM cliente ORDER BY IDcliente";
 $result = mysqli_query($conn, $query);
 ?>
 <!doctype html>
@@ -51,6 +51,7 @@ $result = mysqli_query($conn, $query);
                                         <table class="table text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Primeiro Nome</th>
                                                     <th scope="col">Ultimo Nome</th>
                                                     <th scope="col">Email</th>
@@ -67,7 +68,7 @@ $result = mysqli_query($conn, $query);
                                                 <?php
                                                 while ($row = $result->fetch_object()) {
                                                     echo "<tr>";
-                                                    echo "<td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
+                                                    echo "<td>" . $row->IDcliente . "</td><td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
                                                     echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
                                                     echo "<td>" . $row->cpostal . "</td><td>" . $row->nif . "</td><td>" . $row->pacote . "</td>";
                                                     echo "<td><a href='editseguro.php?IDcliente=$row->IDcliente' name='edit'><i class='ti-pencil-alt'></i></a></td>";
