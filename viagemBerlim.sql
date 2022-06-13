@@ -38,15 +38,15 @@ IDcliente INT AUTO_INCREMENT,
 nome_primeiro VARCHAR(25) NOT NULL,
 nome_ultimo VARCHAR(25) NOT NULL,
 email VARCHAR(150) NOT NULL,
-pass VARCHAR(150) NOT NULL,
 rua VARCHAR(150) NOT NULL,
 localidade VARCHAR(30) NOT NULL,
 cpostal CHAR(8) NOT NULL,
 nif INT UNSIGNED NOT NULL,
+pacote  VARCHAR(30) NOT NULL,
 CONSTRAINT pk_Cliente_IDcliente PRIMARY KEY(IDcliente),
 CONSTRAINT unique_Cliente_email UNIQUE(email),
 CONSTRAINT unique_Cliente_nif UNIQUE(nif)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+)ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE Destino(
 IDdestino INT UNSIGNED AUTO_INCREMENT,
@@ -90,17 +90,8 @@ CONSTRAINT pk_Transporte_ID_transporte PRIMARY KEY(ID_transporte)
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- dados experimentais -- 
-INSERT INTO Cliente
-(nome_primeiro, nome_ultimo, email, pass, rua, localidade, cpostal, nif)
-VALUES
-('joÃ£o','Sousa','joao@example.com','123','rua almirante','Tomar','1233-345',123456789),
-('Laura','Moreno','laura@example.com','124','rua almirante','Tomar','1233-345',123456780),
-('Daniel','Marques','daniel@example.com','125','rua da batalha','Leiria','3245-234',123456712);
-INSERT INTO Telemovel (IDcliente, telemovel)VALUES(1,239487465),(1,239487123),(3,239487890);
-insert into hotel (nome,localizacao,quartos) values('HotelBit','Berlim','Quarto A');
-insert into hotel (nome,localizacao,quartos) values('Hotel Markt','Berlim','Quarto B');
-insert into hotel (nome,localizacao,quartos) values('Hampton by Hilton Frankfurt Airport','Frankfurt','Quarto A');
-insert into hotel (nome,localizacao,quartos) values('EasyHotel','Berlim','Quarto C');
 insert into adm (email,nome,pass) value ("admin@gmail.com","admin","c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec");
 select * from adm;
 select * from hotel;
+select*from Cliente;
+select*from contatos;
