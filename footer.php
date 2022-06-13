@@ -8,7 +8,7 @@
           <a href="index.php"><img src="assets/img/favicon.png" alt="" height="100px"></a>
           <p>
 
-            <strong>Email:</strong> info@gmail.com<br>
+            <strong>Email:</strong> supportravel@gmail.com<br>
           </p>
           <div class="social-links mt-3">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -21,9 +21,9 @@
       <div class="col-lg-3 col-md-6 footer-links">
         <h4>Informações</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Início</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="index.php">Início</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Contato</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="contato.php">Contato</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Termos e Condições</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Política de Privacidade</a></li>
         </ul>
