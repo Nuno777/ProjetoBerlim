@@ -8,7 +8,7 @@ if (!isset($_SESSION['authenticated'])) {
 require_once 'conecao.php';
 $query = "SELECT * FROM contatos ORDER BY id_cont";
 $result = mysqli_query($conn, $query);
-
+$resultMenssage = mysqli_query($conn, $query);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -56,6 +56,7 @@ $result = mysqli_query($conn, $query);
                                                     <th scope="col">Nome</th>
                                                     <th scope="col">Telefone</th>
                                                     <th scope="col">Assunto</th>
+                                                    <th scope="col">Ver Mensagem</th>
                                                     <th scope="col"></th>
                                                     <th scope="col"></th>
                                                 </tr>
@@ -67,6 +68,7 @@ $result = mysqli_query($conn, $query);
                                                     echo "<td>" . $row->id_cont . "</td><td>" . $row->email . "</td>";
                                                     echo "<td>" . $row->nome . "</td><td>" . $row->telefone . "</td>";
                                                     echo "<td>" . $row->assunto . "</td>";
+                                                    echo "<td><a data-toggle='modal' data-target='#viewmensagem$row->id_cont' name='Menssage'><i class='ti-comment-alt'></i></a></td>";
                                                     echo "<td><a href='editcontato.php?id_cont=$row->id_cont' name='edit'><i class='ti-pencil-alt'></i></a></td>";
                                                     echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
@@ -83,6 +85,28 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
     </div>
+
+    <?php while ($r = $resultMenssage->fetch_object()) { ?>
+        <div class="modal fade" id='viewmensagem<?php echo $r->id_cont?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mensagem</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <?php echo $r->mensagem ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a href="editcontato.php?id_cont=$row->id_cont" type="button" class="btn btn-primary" >Editar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+
+    } ?>
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>
