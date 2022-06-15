@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'conecao.php';
+require_once '../conecao.php';
 $IDcliente = $_GET["IDcliente"];
 $query = "DELETE FROM cliente WHERE IDcliente='$IDcliente'";
 $result = mysqli_query($conn, $query);

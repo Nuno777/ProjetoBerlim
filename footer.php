@@ -23,9 +23,9 @@
         <ul>
           <li><i class="bx bx-chevron-right"></i> <a href="index.php">Início</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="contato.php">Contato</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="contato.php">Contacto</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Termos e Condições</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Política de Privacidade</a></li>
+          <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Política de Privacidade</a></li> -->
         </ul>
       </div>
       <!-- <div class="col-lg-3 col-md-6 footer-links">

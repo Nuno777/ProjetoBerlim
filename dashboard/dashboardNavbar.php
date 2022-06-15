@@ -1,5 +1,5 @@
 <?php
-require_once 'conecao.php';
+require_once '../conecao.php';
 $query = "SELECT nome FROM adm WHERE id";
 $queryadm = mysqli_query($conn, $query);
 if ($queryadm->num_rows) {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['authenticated'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit(0);
 }
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($nome == "" || $local == "")
         $msg_erro = "Campos não preenchidos";
     else {
-        require_once 'conecao.php';
+        require_once '../conecao.php';
         if ($conn->connect_errno) {
             $code = $conn->connect_errno;
             $message = $conn->connect_error;

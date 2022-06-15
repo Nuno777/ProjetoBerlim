@@ -1,12 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION['authenticated'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit(0);
 }
-
-require_once 'conecao.php';
-
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
