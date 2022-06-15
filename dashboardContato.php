@@ -14,23 +14,9 @@ $resultMenssage = mysqli_query($conn, $query);
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assetsAdmin/images/icon/favicon.ico">
-    <link rel="stylesheet" href="assetsAdmin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/themify-icons.css">
-    <link rel="stylesheet" href="assetsAdmin/css/metisMenu.css">
-    <link rel="stylesheet" href="assetsAdmin/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/slicknav.min.css">
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="assetsAdmin/css/typography.css">
-    <link rel="stylesheet" href="assetsAdmin/css/default-css.css">
-    <link rel="stylesheet" href="assetsAdmin/css/styles.css">
-    <link rel="stylesheet" href="assetsAdmin/css/responsive.css">
-    <script src="assetsAdmin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php
+    require_once 'dashboardHead.php';
+    ?>
 </head>
 
 <body class="body-bg">
@@ -48,7 +34,7 @@ $resultMenssage = mysqli_query($conn, $query);
                                 <h4 class="header-title">Contactos</h4>
                                 <div class="single-table">
                                     <div class="table-responsive">
-                                        <table class="table text-center">
+                                        <table class="table table-hover text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
                                                     <th scope="col">ID</th>
@@ -68,9 +54,9 @@ $resultMenssage = mysqli_query($conn, $query);
                                                     echo "<td>" . $row->id_cont . "</td><td>" . $row->email . "</td>";
                                                     echo "<td>" . $row->nome . "</td><td>" . $row->telefone . "</td>";
                                                     echo "<td>" . $row->assunto . "</td>";
-                                                    echo "<td><a data-toggle='modal' data-target='#viewmensagem$row->id_cont' name='Menssage'><i class='ti-comment-alt'></i></a></td>";
-                                                    echo "<td><a href='editcontato.php?id_cont=$row->id_cont' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td><a data-toggle='modal' data-target='#viewmensagem$row->id_cont' class='text-primary' name='Menssage'><i class='ti-comment-alt'></i></a></td>";
+                                                    echo "<td><a href='editcontato.php?id_cont=$row->id_cont' class='text-secondary' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>
@@ -86,20 +72,23 @@ $resultMenssage = mysqli_query($conn, $query);
         </div>
     </div>
 
-    <?php while ($r = $resultMenssage->fetch_object()) { ?>
-        <div class="modal fade" id='viewmensagem<?php echo $r->id_cont?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php while ($row = $resultMenssage->fetch_object()) { ?>
+        <div class="modal fade" id='viewmensagem<?php echo $row->id_cont ?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Mensagem</h5>
-
+                        <h5 class="modal-title" id="exampleModalLabel">Mensagem</h5><span class="span-contat">ID <?php echo $row->id_cont; ?></span>
                     </div>
                     <div class="modal-body">
-                        <?php echo $r->mensagem ?>
+                        <?php
+                        echo $row->mensagem;
+                        ?>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <a href="editcontato.php?id_cont=$row->id_cont" type="button" class="btn btn-primary" >Editar</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <?php
+                        echo  "<a  href='editcontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Editar</a>";
+                        ?>
                     </div>
                 </div>
             </div>

@@ -11,13 +11,10 @@ if ($queryadm->num_rows) {
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3">
-                <div class="col-sm-6">
-                    <div class="breadcrumbs-area clearfix">
-                        <ul class="breadcrumbs pull-left">
-                            <p><?php echo "<h4>".$adm."</h4>";?></p>
-                            <!-- <li><a href="index.php">Início</a></li>
-                            <li><span>Dashboard</span></li> -->
-                        </ul>
+                <div class="clearfix d-md-inline-block d-block">
+                    <div class="user-profile">
+                        <img class="avatar user-thumb" src="assetsAdmin/images/admin.png" alt="Admin">
+                        <h4 class="user-name"><?php echo $adm ?></h4>
                     </div>
                 </div>
             </div>
@@ -70,7 +67,7 @@ if ($queryadm->num_rows) {
                     </nav>
                 </div>
             </div>
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
                         <ul class="breadcrumbs pull-left">
@@ -79,7 +76,7 @@ if ($queryadm->num_rows) {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-12 d-block d-lg-none">
                 <div id="mobile_menu"></div>

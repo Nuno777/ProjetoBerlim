@@ -13,23 +13,9 @@ $result = mysqli_query($conn, $query);
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assetsAdmin/images/icon/favicon.ico">
-    <link rel="stylesheet" href="assetsAdmin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/themify-icons.css">
-    <link rel="stylesheet" href="assetsAdmin/css/metisMenu.css">
-    <link rel="stylesheet" href="assetsAdmin/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/slicknav.min.css">
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="assetsAdmin/css/typography.css">
-    <link rel="stylesheet" href="assetsAdmin/css/default-css.css">
-    <link rel="stylesheet" href="assetsAdmin/css/styles.css">
-    <link rel="stylesheet" href="assetsAdmin/css/responsive.css">
-    <script src="assetsAdmin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php
+    require_once 'dashboardHead.php';
+    ?>
 </head>
 
 <body class="body-bg">
@@ -48,7 +34,7 @@ $result = mysqli_query($conn, $query);
                                 <div class="single-table">
                                     <div class="table-responsive">
 
-                                        <table class="table text-center">
+                                        <table class="table table-hover text-center">
                                             <thead class="text-uppercase bg-dark">
                                                 <tr class="text-white">
                                                     <th scope="col">ID</th>
@@ -71,8 +57,8 @@ $result = mysqli_query($conn, $query);
                                                     echo "<td>" . $row->IDcliente . "</td><td>" . $row->nome_primeiro . "</td><td>" . $row->nome_ultimo . "</td>";
                                                     echo "<td>" . $row->email . "</td><td>" . $row->rua . "</td><td>" . $row->localidade . "</td>";
                                                     echo "<td>" . $row->cpostal . "</td><td>" . $row->nif . "</td><td>" . $row->pacote . "</td>";
-                                                    echo "<td><a href='editseguro.php?IDcliente=$row->IDcliente' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deleteseguro.php?IDcliente=$row->IDcliente' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td><a href='editseguro.php?IDcliente=$row->IDcliente' class='text-secondary' name='edit'><i class='ti-pencil-alt'></i></a></td>";
+                                                    echo "<td><a href='deleteseguro.php?IDcliente=$row->IDcliente' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>

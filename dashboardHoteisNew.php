@@ -12,7 +12,7 @@ $foto = array_key_exists('foto', $_FILES) ? $_FILES['foto']['name'] : "";
 $msg_erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($nome == "" || $local == "" )
+    if ($nome == "" || $local == "")
         $msg_erro = "Campos não preenchidos";
     else {
         require_once 'conecao.php';
@@ -53,23 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="assetsAdmin/images/icon/favicon.ico">
-    <link rel="stylesheet" href="assetsAdmin/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/themify-icons.css">
-    <link rel="stylesheet" href="assetsAdmin/css/metisMenu.css">
-    <link rel="stylesheet" href="assetsAdmin/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assetsAdmin/css/slicknav.min.css">
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="assetsAdmin/css/typography.css">
-    <link rel="stylesheet" href="assetsAdmin/css/default-css.css">
-    <link rel="stylesheet" href="assetsAdmin/css/styles.css">
-    <link rel="stylesheet" href="assetsAdmin/css/responsive.css">
-    <script src="assetsAdmin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php
+    require_once 'dashboardHead.php';
+    ?>
 </head>
 
 <body class="body-bg">
