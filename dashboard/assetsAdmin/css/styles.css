@@ -282,7 +282,7 @@
 /* mobile menu */
 
 .slicknav_menu {
-    background: #8255f7;
+    background: #007bff;
     padding: 0;
     margin-top: 20px;
 }
@@ -315,7 +315,7 @@
 
 .slicknav_nav .slicknav_row:hover {
     border-radius: 0;
-    background: #8e66f7;
+    background: #2c71da;
 }
 
 .slicknav_nav li i {
@@ -2508,7 +2508,7 @@ table.dataTable thead td {
 }
 
 .offset-menu-tab li a.active {
-    color: #853bfa;
+    color: #fff;
 }
 
 .offset-menu-tab li a:before {

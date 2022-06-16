@@ -8,6 +8,7 @@ if (!isset($_SESSION['authenticated'])) {
 require_once '../conecao.php';
 $query = "SELECT * FROM hotel ORDER BY id_hotel";
 $result = mysqli_query($conn, $query);
+$resultt = mysqli_query($conn, $query);
 
 ?>
 <!doctype html>
@@ -63,6 +64,27 @@ $result = mysqli_query($conn, $query);
                             </div>
                         </div>
                     </div>
+                    <?php
+                    while ($row = $resultt->fetch_object()) {
+                        $foto = $row->foto_hotel;
+                        if ($foto == null) {
+                            $foto = '../uploads/defaulthotel.jpg';
+                        }
+                    ?>
+                        <div class='col-sm-3 mt-5'>
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="card-text">ID: <?php echo $row->id_hotel ?></p>
+                                    <img src="<?php echo $foto ?>" class="card-img-top" alt="Image">
+                                    <h5 class="card-title"><?php echo $row->nome ?></h5>
+                                    <p class="card-text">Localização: <?php echo $row->localizacao ?></p>
+                                    <a href='edithotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-secondary btn-sm' name='edit'>Editar</a>
+                                    <a href='deletehotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-danger btn-sm' name='delete'>Eliminar</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    } ?>
                 </div>
             </div>
         </div>

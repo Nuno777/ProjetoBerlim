@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" required></textarea>
+            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="100" required></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>

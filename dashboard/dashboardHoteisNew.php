@@ -72,35 +72,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="card-body">
                                 <h4 class="header-title ">Criar Hotel</h4>
                                 <div class="single-table">
-                                    <div class="table-responsive">
-                                        <form action="dashboardHoteisNew.php" id="newhotel" class="form" method="POST" enctype="multipart/form-data">
+                                    <form action="dashboardHoteisNew.php" id="newhotel" class="form row g-3" method="POST" enctype="multipart/form-data">
 
-                                            <div class="form-input">
-                                                <label for="nome">Nome do Hotel</label>
-                                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Escreva o nome" value="<?= $nome ?>" required>
-                                            </div>
-                                            <div class="form-input">
-                                                <label for="local">localização</label>
-                                                <input type="text" class="form-control" id="local" name="local" placeholder="Escreva o local" value="<?= $local ?>" required>
-                                            </div>
+                                        <div class="col-md-12" class="form-input">
+                                            <label for="nome">Nome do Hotel</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Escreva o nome do hotel" value="<?= $nome ?>" required>
+                                        </div>
+                                        <div class="col-md-6" class="form-input">
+                                            <label for="local">Localização</label>
+                                            <input type="text" class="form-control" id="local" name="local" placeholder="Escreva a localização do hotel" value="<?= $local ?>" required>
+                                        </div>
 
-                                            <div class="col-md-2" id="quarto-container">
-                                                <label for="quarto">Quartos</label>
-                                                <select class="form-control" id="quarto" name="quarto">
-                                                    <option selected value="Quarto Normal">Quarto Normal</option>
-                                                    <option value="Quarto Duplo">Quarto Duplo</option>
-                                                    <option value="Suite">Suite</option>
-                                                </select>
-                                            </div>
+                                        <div class="col-md-6" id="quarto-container">
+                                            <label for="quarto">Quartos</label>
+                                            <select class="form-control" id="quarto" name="quarto">
+                                                <option selected value="Quarto Normal">Quarto Normal</option>
+                                                <option value="Quarto Duplo">Quarto Duplo</option>
+                                                <option value="Suite">Suite</option>
+                                            </select>
+                                        </div>
 
-                                            <div class="form-input">
-                                                <label for="foto">Foto</label>
-                                                <input type="file" class="form-control" id="foto" name="foto"><br>
-                                            </div>
+                                        <div class="col-md-12" class="form-input">
+                                            <label for="foto">Foto</label>
+                                            <input type="file" class="form-control" id="foto" name="foto"><br>
+                                        </div>
 
+                                        <div class="col-md-1 mt-3">
                                             <button type="submit" class="btn btn-primary" name="newhotel">Inserir</button>
-                                        </form>
-                                    </div>
+                                        </div>
+                                        <div class=" mt-3">
+                                            <a href="dashboardHoteis.php" class="btn btn-secondary" name="voltarhotal" type="submit">Voltar</a>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

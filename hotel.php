@@ -43,17 +43,18 @@ $result = mysqli_query($conn, $q);
             $foto = $row->foto_hotel;
             if ($foto == null) {
               $foto = 'uploads/defaulthotel.jpg';
-            }
-            echo "<div class='col-sm-3'>";
-            echo "<div class='card' style='width: 18rem;'>";
-            echo "<img class='card-img-top' src='$foto' alt='Image' >";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
-            echo "<p class='card-text'>" . $row->localizacao . "</p>";
-            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
+            } ?>
+            <div class='col-sm-3'>
+              <div class='card' style='width: 18rem;'>
+                <img class='card-img-top' src='<?php echo $foto ?>' alt='Image'>
+                <div class='card-body'>
+                  <h5 class='card-title'><?php echo $row->nome ?></h5>
+                  <p class='card-text'>Localização: <?php echo $row->localizacao ?></p>
+                  <a href='#' class='btn btn-primary'>Contactar</a>
+                </div>
+              </div>
+            </div>
+          <?php
           }
           ?>
         </div>

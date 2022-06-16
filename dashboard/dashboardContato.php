@@ -9,6 +9,7 @@ require_once '../conecao.php';
 $query = "SELECT * FROM contatos ORDER BY id_cont";
 $result = mysqli_query($conn, $query);
 $resultMenssage = mysqli_query($conn, $query);
+$resultdelete = mysqli_query($conn, $query);
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -56,7 +57,8 @@ $resultMenssage = mysqli_query($conn, $query);
                                                     echo "<td>" . $row->assunto . "</td>";
                                                     echo "<td><a data-toggle='modal' data-target='#viewmensagem$row->id_cont' class='text-primary' name='Menssage'><i class='ti-comment-alt'></i></a></td>";
                                                     echo "<td><a href='editcontato.php?id_cont=$row->id_cont' class='text-secondary' name='edit'><i class='ti-pencil-alt'></i></a></td>";
-                                                    echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    //echo "<td><a href='deletecontato.php?id_cont=$row->id_cont' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
+                                                    echo "<td><a data-toggle='modal' data-target='#deletecontato$row->id_cont' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
                                                 ?>
@@ -71,7 +73,7 @@ $resultMenssage = mysqli_query($conn, $query);
             </div>
         </div>
     </div>
-
+    <!-- Modal de ver mensagem -->
     <?php while ($row = $resultMenssage->fetch_object()) { ?>
         <div class="modal fade" id='viewmensagem<?php echo $row->id_cont ?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -94,8 +96,35 @@ $resultMenssage = mysqli_query($conn, $query);
             </div>
         </div>
     <?php
+    }
+    ?>
+    <!-- Modal de ver mensagem fechou -->
 
-    } ?>
+    <!-- Modal para eliminar -->
+    <?php while ($row = $resultdelete->fetch_object()) { ?>
+        <div class="modal fade" id='deletecontato<?php echo $row->id_cont ?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>Deseja eliminar o contacto número <?php echo $row->id_cont; ?></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                        <?php
+                        echo  "<a href='deletecontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Sim</a>";
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <!-- Modal para eliminar fechou -->
+
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>
