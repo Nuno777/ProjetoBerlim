@@ -50,7 +50,7 @@ if (isset($_POST["editcontato"])) {
                         <div class="col-lg-12 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="header-title">Contactos</h4>
+                                    <h4 class="header-title">Editar Contacto</h4>
                                     <div class="single-table">
                                         <form id="editcontato" action="editcontato.php" method="POST" class="row g-3" enctype="multipart/form-data">
 

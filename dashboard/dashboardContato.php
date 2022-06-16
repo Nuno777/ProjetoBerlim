@@ -43,7 +43,7 @@ $resultdelete = mysqli_query($conn, $query);
                                                     <th scope="col">Nome</th>
                                                     <th scope="col">Telefone</th>
                                                     <th scope="col">Assunto</th>
-                                                    <th scope="col">Ver Mensagem</th>
+                                                    <th scope="col">Mensagem</th>
                                                     <th scope="col"></th>
                                                     <th scope="col"></th>
                                                 </tr>
@@ -106,7 +106,7 @@ $resultdelete = mysqli_query($conn, $query);
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Contacto</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Contacto</h5>
                     </div>
                     <div class="modal-body">
                         <p>Deseja eliminar o contacto número <?php echo $row->id_cont; ?></p>
