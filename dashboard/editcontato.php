@@ -46,28 +46,25 @@ if (isset($_POST["editcontato"])) {
                 $mensagem = $row->mensagem;
             ?>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 mt-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="header-title">Editar Contacto</h4>
-                                    <div class="single-table">
-                                        <form id="editcontato" action="editcontato.php" method="POST" class="row g-3" enctype="multipart/form-data">
+                    <div class="col-lg-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Editar Contacto</h4>
+                                <div class="single-table">
+                                    <form id="editcontato" action="editcontato.php" method="POST" class="form" enctype="multipart/form-data">
 
-                                            <div class="col-md-1" id="id_cont-container">
-                                                <label for="id_cont" class="form-label">ID</label>
-                                                <input type="text" class="form-control" id="id_cont" name="id_cont" value="<?= $id_cont ?>" required readonly>
-                                                <div id="validarfeed" class="invalid-feedback invalid-id_cont">
-                                                </div>
-                                            </div>
+                                        <input type="text" class="form-control" id="id_cont" name="id_cont" value="<?= $id_cont ?>" required hidden>
 
-                                            <div class="col-md-11" id="email-container">
+                                        <div class="row mb-2">
+                                            <div class="col-md-12" id="email-container">
                                                 <label for="email" class="form-label">Email</label>
                                                 <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required>
                                                 <div id="validarfeed" class="invalid-feedback invalid-email">
                                                 </div>
                                             </div>
-
+                                        </div>
+                                        
+                                        <div class="row mb-2">
                                             <div class="col-md-6" id="name-container">
                                                 <label for="nome" class="form-label">Nome</label>
                                                 <input type="text" class="form-control" id="nome" name="nome" value="<?= $nome ?>" minlength="3" maxlength="25" required>
@@ -81,30 +78,37 @@ if (isset($_POST["editcontato"])) {
                                                 <div id="validarfeed" class="valid-feedback invalid-telefone">
                                                 </div>
                                             </div>
+                                        </div>
 
+                                        <div class="row mb-2">
                                             <div class="col-md-12" id="assunto-container">
                                                 <label for="assunto" class="form-label">Assunto</label>
-                                                <input type="text" class="form-control" id="assunto" name="assunto" value="<?= $assunto ?>" minlength="3" maxlength="100" required>
+                                                <input type="text" class="form-control" id="assunto" name="assunto" value="<?= $assunto ?>" minlength="3" maxlength="40" required>
                                                 <div id="validarfeed" class="valid-feedback invalid-assunto">
                                                 </div>
                                             </div>
-
+                                        </div>
+                                        
+                                        <div class="row mb-2">
                                             <div class="col-md-12" id="mensagem-container">
                                                 <label for="mensagem" class="form-label">Mensagem</label>
-                                                <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="100" required><?= $mensagem ?></textarea>
+                                                <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" required><?= $mensagem ?></textarea>
                                                 <div id="validarfeed" class="invalid-feedback invalid-mensagem">
 
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <div class="col-md-1 mt-3">
+                                        <div class="row">
+                                            <div class="col-md-1 ">
                                                 <button class="btn btn-primary" name="editcontato" type="submit">Editar</button>
                                             </div>
-                                            <div class=" mt-3">
+                                            <div class="col-md-1">
                                                 <a href="dashboardContato.php" class="btn btn-secondary" name="voltarcontato" type="submit">Voltar</a>
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -37,15 +37,16 @@ $result = mysqli_query($conn, $q);
 
     <section class="inner-page">
       <div class="container">
-        <div class="row">
+        <div class="row ">
           <?php
           while ($row = $result->fetch_object()) {
             $foto = $row->foto_hotel;
             if ($foto == null) {
               $foto = 'uploads/defaulthotel.jpg';
-            } ?>
+            }
+          ?>
             <div class='col-sm-3'>
-              <div class='card' style='width: 18rem;'>
+              <div class='card'>
                 <img class='card-img-top' src='<?php echo $foto ?>' alt='Image'>
                 <div class='card-body'>
                   <h5 class='card-title'><?php echo $row->nome ?></h5>
