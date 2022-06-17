@@ -21,7 +21,7 @@ if ($queryadm->num_rows) {
             <div class="col-md-9 clearfix text-right">
                 <div class="clearfix d-md-inline-block d-block">
                     <div class="m-3">
-                        <a class="btn btn-primary" href="logout.php">
+                        <a class="btn btn-outline-primary btn-sm" href="logout.php">
                             <h6>Logout</h6>
                         </a>
                     </div>

@@ -90,9 +90,7 @@ $resultdelete = mysqli_query($conn, $query);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                        <?php
-                        echo  "<a  href='editcontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Editar</a>";
-                        ?>
+                        <?php echo "<a href='editcontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Editar</a>"; ?>
                     </div>
                 </div>
             </div>
@@ -111,7 +109,7 @@ $resultdelete = mysqli_query($conn, $query);
                         <h5 class="modal-title" id="exampleModalLabel">Eliminar Contacto</h5><span class="span-contat"><?php echo $row->email; ?></span>
                     </div>
                     <div class="modal-body">
-                        <p>Deseja eliminar o contacto</p>
+                        <p>Deseja eliminar este contacto?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>

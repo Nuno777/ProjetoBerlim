@@ -54,11 +54,11 @@ $resultdelete = mysqli_query($conn, $query);
                                     <h5 class="card-title"><?php echo $row->nome ?></h5>
                                     <p class="card-text">Localização: <?php echo $row->localizacao ?></p>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <a href='edithotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-secondary btn-sm' name='edit'>Editar</a>
                                         </div>
-                                        <div class="">
-                                            <a href='deletehotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-danger btn-sm' name='delete'>Eliminar</a>
+                                        <div class="col-md-3">
+                                             <a data-toggle='modal' data-target='#deletehotel<?php echo$row->id_hotel?>' class='btn btn-danger btn-sm' name='delete'>Eliminar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -73,19 +73,19 @@ $resultdelete = mysqli_query($conn, $query);
 
     <!-- Modal para eliminar -->
     <?php while ($row = $resultdelete->fetch_object()) { ?>
-        <div class="modal fade" id='deletecontato<?php echo $row->id_cont ?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id='deletehotel<?php echo $row->id_hotel ?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Contacto</h5><span class="span-contat"><?php echo $row->email; ?></span>
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Post de Hotel</h5><span class="span-contat"><?php echo $row->nome; ?></span>
                     </div>
                     <div class="modal-body">
-                        <p>Deseja eliminar o contacto</p>
+                        <p>Deseja eliminar o post deste hotel?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
                         <?php
-                        echo  "<a href='deletecontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Sim</a>";
+                        echo  "<a href='deletehotel.php?id_hotel=$row->id_hotel' type='button' class='btn btn-primary'>Sim</a>";
                         ?>
                     </div>
                 </div>
