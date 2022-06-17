@@ -58,7 +58,7 @@ $resultdelete = mysqli_query($conn, $query);
                                             <a href='edithotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-secondary btn-sm' name='edit'>Editar</a>
                                         </div>
                                         <div class="col-md-3">
-                                             <a data-toggle='modal' data-target='#deletehotel<?php echo$row->id_hotel?>' class='btn btn-danger btn-sm' name='delete'>Eliminar</a>
+                                            <a data-toggle='modal' data-target='#deletehotel<?php echo $row->id_hotel ?>' class='btn btn-danger btn-sm' id="btndeletehotel" name='delete'>Eliminar</a>
                                         </div>
                                     </div>
                                 </div>
