@@ -13,6 +13,7 @@ create table hotel(
 id_hotel int AUTO_INCREMENT primary key,
 nome varchar(30) not null,
 localizacao varchar(30) not null,
+rua varchar(30) not null,
 quartos varchar(30) not null,
 foto_hotel varchar(250) DEFAULT NULL
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;

@@ -7,12 +7,13 @@ if (!isset($_SESSION['authenticated'])) {
 
 $nome = array_key_exists('nome', $_POST) ? $_POST['nome'] : "";
 $local = array_key_exists('local', $_POST) ? $_POST['local'] : "";
+$rua = array_key_exists('rua', $_POST) ? $_POST['rua'] : "";
 $quarto = array_key_exists('quarto', $_POST) ? $_POST['quarto'] : "";
 $foto = array_key_exists('foto', $_FILES) ? $_FILES['foto']['name'] : "";
 $msg_erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($nome == "" || $local == "")
+    if ($nome == "" || $local == "" || $rua == "")
         $msg_erro = "Campos não preenchidos";
     else {
         require_once '../conecao.php';
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $nome = $conn->real_escape_string($nome);
 
-            $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `quartos`) VALUES ('$nome', '$local', '$quarto')";
+            $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `rua`, `quartos`) VALUES ('$nome', '$local','$rua', '$quarto')";
 
             if ($foto != "" && getimagesize($_FILES['foto']['tmp_name'])) {
                 // tratar upload da foto
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $newhotel_ficheiro = $diretoria_upload . sha1(microtime()) . "." . $extensao;
 
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $newhotel_ficheiro)) {
-                    $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `quartos`, `foto_hotel`) VALUES ('$nome', '$local', '$quarto', '$newhotel_ficheiro')";
+                    $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `rua`, `quartos`, `foto_hotel`) VALUES ('$nome', '$local','$rua', '$quarto', '$newhotel_ficheiro')";
                 }
             }
 
@@ -81,10 +82,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                     <div class="row mb-2">
                                         <div class="col-md-6" class="form-input">
+                                            <label for="rua">Rua do Hotel</label>
+                                            <input type="text" class="form-control" id="rua" name="rua" placeholder="Escreva a rua onde se encontra o hotel" value="<?= $rua ?>" required>
+                                        </div>
+                                        <div class="col-md-6" class="form-input">
                                             <label for="local">Localização</label>
                                             <input type="text" class="form-control" id="local" name="local" placeholder="Escreva a localização do hotel" value="<?= $local ?>" required>
                                         </div>
-
+                                    </div>
+                                    <div class="row mb-2">
                                         <div class="col-md-6" id="quarto-container">
                                             <label for="quarto" class="form-label">Quartos</label>
                                             <select class="form-control" id="quarto" name="quarto">
@@ -93,9 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                 <option value="Suite">Suite</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <div class="col-md-12" class="form-input">
+                                        <div class="col-md-6" class="form-input">
                                             <label for="foto">Foto</label>
                                             <input type="file" class="form-control" id="foto" name="foto"><br>
                                         </div>
