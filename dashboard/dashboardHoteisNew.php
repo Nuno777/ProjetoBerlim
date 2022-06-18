@@ -30,10 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // tratar upload da foto
                 $diretoria_upload = "uploads/";
                 $extensao = pathinfo($foto, PATHINFO_EXTENSION);
-                $newhotel_ficheiro = $diretoria_upload . sha1(microtime()) . "." . $extensao;
+                $imageDatabasePath = $diretoria_upload . sha1(microtime()) . "." . $extensao;
+                $newhotel_ficheiro = "../" . $imageDatabasePath;
+                
 
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $newhotel_ficheiro)) {
-                    $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `rua`, `quartos`, `foto_hotel`) VALUES ('$nome', '$local','$rua', '$quarto', '$newhotel_ficheiro')";
+                    $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `rua`, `quartos`, `foto_hotel`) VALUES ('$nome', '$local','$rua', '$quarto', '$imageDatabasePath')";
                 }
             }
 

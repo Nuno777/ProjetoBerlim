@@ -44,13 +44,13 @@ $resultdelete = mysqli_query($conn, $query);
                     while ($row = $result->fetch_object()) {
                         $foto = $row->foto_hotel;
                         if ($foto == null) {
-                            $foto = '../uploads/defaulthotel.jpg';
+                            $foto = 'uploads/defaulthotel.jpg';
                         }
                     ?>
                         <div class='col-sm-3 mt-5'>
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="<?php echo $foto ?>" class="card-img-top" alt="Image">
+                                    <img src="../<?php echo $foto ?>" class="card-img-top" alt="Image">
                                     <h5 class="card-title"><?php echo $row->nome ?></h5>
                                     <p class="card-text">Localização: <?php echo $row->localizacao ?></p>
                                     <div class="row">

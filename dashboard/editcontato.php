@@ -14,6 +14,20 @@ if (isset($_POST["editcontato"])) {
     $mensagem = $_POST["mensagem"];
     $query = "UPDATE contatos SET email='$email',nome='$nome',telefone='$tel',assunto='$assunto',mensagem='$mensagem' WHERE id_cont='$id_cont'";
     $result = mysqli_query($conn, $query);
+
+    // Definir Alerta - Operações (EDITAR/APAGAR) 
+    if ($conn->affected_rows > 0) {
+        $_SESSION["message"] = array(
+            "content" => "O contacto do email <b>" . $email . "</b> foi atualizado com sucesso!",
+            "type" => "success",
+        );
+    } else {
+        $_SESSION["message"] = array(
+            "content" => "Ocorreu um erro ao atualizar o contacto do email <b>" . $email . "</b>!",
+            "type" => "danger",
+        );
+    }
+
     header('Location: dashboardContato.php');
 }
 ?>
@@ -101,7 +115,7 @@ if (isset($_POST["editcontato"])) {
 
                                         <div class="row">
                                             <div class="col-md-1 ">
-                                                <button class="btn btn-primary" name="editcontato" type="submit">Editar</button>
+                                                <button class="btn btn-primary" name="editcontato" id="editcontatobutton" type="submit" disabled>Editar</button>
                                             </div>
                                             <div class="col-md-1">
                                                 <a href="dashboardContato.php" class="btn btn-secondary" name="voltarcontato" type="submit">Voltar</a>
@@ -120,6 +134,15 @@ if (isset($_POST["editcontato"])) {
             } ?>
         </div>
     </div>
+    <!-- JQuery ativar botão editar -->
+    <script>
+        $(document).ready(function() {
+            $('#editcontato').on('input change', function() {
+                $('#editcontatobutton').attr('disabled', false);
+            });
+        })
+    </script>
+
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>

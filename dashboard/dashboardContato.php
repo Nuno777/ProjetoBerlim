@@ -30,6 +30,16 @@ $resultdelete = mysqli_query($conn, $query);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mt-5">
+                        <!-- Alerta - Operações (EDITAR/APAGAR) -->
+                        <?php
+                        if (isset($_SESSION["message"])) {?>
+                            <div class='alert alert-<?php echo $_SESSION["message"]["type"]?>' role='alert'>
+                                <?php echo $_SESSION["message"]["content"];?>
+                            </div>
+
+                            <?php unset($_SESSION["message"]);
+                        }
+                        ?>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Contactos</h4>

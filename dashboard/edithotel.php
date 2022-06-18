@@ -11,7 +11,7 @@ if (isset($_POST["edithotel"])) {
     $local = $_POST["local"];
     $rua = $_POST["rua"];
     $quarto = $_POST["quarto"];
-    $query = "UPDATE contatos SET nome='$nome',localizacao='$local',rua='$rua',quartos='$quarto' WHERE id_hotel='$id_hotel'";
+    $query = "UPDATE hotel SET nome='$nome',localizacao='$local',rua='$rua',quartos='$quarto' WHERE id_hotel='$id_hotel'";
     $result = mysqli_query($conn, $query);
     header('Location: dashboardHoteisList.php');
 }
@@ -39,7 +39,7 @@ if (isset($_POST["edithotel"])) {
                 $row = $result->fetch_object();
                 $id_hotel = $row->id_hotel;
                 $nome = $row->nome;
-                $local = $row->local;
+                $local = $row->localizacao;
                 $rua = $row->rua;
                 //$quarto = $row->quarto;
             ?>
