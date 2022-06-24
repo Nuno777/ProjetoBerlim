@@ -16,12 +16,12 @@ if (isset($_POST["edithotel"])) {
 
     // Definir Alerta - Operações (EDITAR) 
     if ($conn->affected_rows > 0) {
-        $_SESSION["messagedit"] = array(
+        $_SESSION["message"] = array(
             "content" => "O hotel <b>" . $nome . "</b> foi atualizado com sucesso!",
             "type" => "success",
         );
     } else {
-        $_SESSION["messagedit"] = array(
+        $_SESSION["message"] = array(
             "content" => "Ocorreu um erro ao atualizar o hotel <b>" . $nome . "</b>!",
             "type" => "danger",
         );

@@ -33,14 +33,14 @@ $resultdelete = mysqli_query($conn, $query);
                     <div class="col-lg-12 mt-5">
                         <!-- Alerta - Operações (EDITAR) -->
                         <?php
-                        if (isset($_SESSION["messagedit"])) { ?>
-                            <div class='alert alert-<?php echo $_SESSION["messagedit"]["type"] ?> alert-dismissible fade show' role='alert'>
-                                <?php echo $_SESSION["messagedit"]["content"]; ?>
+                        if (isset($_SESSION["message"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["message"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["message"]["content"]; ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
                                 </button>
                             </div>
 
-                        <?php unset($_SESSION["messagedit"]);
+                        <?php unset($_SESSION["message"]);
                         }
                         ?>
 
@@ -128,7 +128,7 @@ $resultdelete = mysqli_query($conn, $query);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                        <a href='deletecontato.php?id_cont=<?php echo $row->id_cont ?>' type='button' class='btn btn-primary'>Sim</a>
+                        <a href='deletecontato.php?id_cont=<?php echo $row->id_cont .'&email='. $row->email ?>' type='button' class='btn btn-primary'>Sim</a>
                     </div>
                 </div>
             </div>

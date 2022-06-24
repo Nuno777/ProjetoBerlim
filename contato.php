@@ -52,11 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
@@ -66,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Contacto</li>
           </ol>
         </div>
-
       </div>
     </section>
 
@@ -82,9 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
           <div class="col-sm-4">
+            
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Telefone</h5>
+                <h5 class="bi bi-envelope" class="card-title">Telefone</h5>
                 <p class="card-text">+351 211202020</p>
               </div>
             </div>
@@ -154,11 +153,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'footer.php';
     ?>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -166,7 +164,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

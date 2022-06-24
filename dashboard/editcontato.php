@@ -17,12 +17,12 @@ if (isset($_POST["editcontato"])) {
 
     // Definir Alerta - Operações (EDITAR) 
     if ($conn->affected_rows > 0) {
-        $_SESSION["messagedit"] = array(
+        $_SESSION["message"] = array(
             "content" => "O contacto do email <b>" . $email . "</b> foi atualizado com sucesso!",
             "type" => "success",
         );
     } else {
-        $_SESSION["messagedit"] = array(
+        $_SESSION["message"] = array(
             "content" => "Ocorreu um erro ao atualizar o contacto do email <b>" . $email . "</b>!",
             "type" => "danger",
         );

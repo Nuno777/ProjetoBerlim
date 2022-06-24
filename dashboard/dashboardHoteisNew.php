@@ -44,12 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 // Definir Alerta - Operações (NEW) 
                 if ($conn->affected_rows > 0) {
-                    $_SESSION["messagenew"] = array(
+                    $_SESSION["message"] = array(
                         "content" => "O post do hotel <b>" . $nome . "</b> foi criado com sucesso!",
                         "type" => "success",
                     );
                 } else {
-                    $_SESSION["messagenew"] = array(
+                    $_SESSION["message"] = array(
                         "content" => "Ocorreu um erro ao criado o post do hotel <b>" . $nome . "</b>!",
                         "type" => "danger",
                     );

@@ -32,27 +32,14 @@ $resultdelete = mysqli_query($conn, $query);
                     <div class="col-lg-12 mt-5">
                         <!-- Alerta - Operações (EDITAR) -->
                         <?php
-                        if (isset($_SESSION["messagedit"])) { ?>
-                            <div class='alert alert-<?php echo $_SESSION["messagedit"]["type"] ?> alert-dismissible fade show' role='alert'>
-                                <?php echo $_SESSION["messagedit"]["content"]; ?>
+                        if (isset($_SESSION["message"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["message"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["message"]["content"]; ?>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
                                 </button>
                             </div>
 
-                        <?php unset($_SESSION["messagedit"]);
-                        }
-                        ?>
-
-                        <!-- Alerta - Operações (NEW) -->
-                        <?php
-                        if (isset($_SESSION["messagenew"])) { ?>
-                            <div class='alert alert-<?php echo $_SESSION["messagenew"]["type"] ?> alert-dismissible fade show' role='alert'>
-                                <?php echo $_SESSION["messagenew"]["content"]; ?>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
-                                </button>
-                            </div>
-
-                        <?php unset($_SESSION["messagenew"]);
+                        <?php unset($_SESSION["message"]);
                         }
                         ?>
                         <div class="card">
@@ -109,9 +96,7 @@ $resultdelete = mysqli_query($conn, $query);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                        <?php
-                        echo  "<a href='deletehotel.php?id_hotel=$row->id_hotel' type='button' class='btn btn-primary'>Sim</a>";
-                        ?>
+                        <a href='deletehotel.php?id_hotel= <?php echo $row->id_hotel . '&nome=' . $row->nome ?>' type='button' class='btn btn-primary'>Sim</a>
                     </div>
                 </div>
             </div>
