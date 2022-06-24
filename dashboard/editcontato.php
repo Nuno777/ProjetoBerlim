@@ -15,14 +15,14 @@ if (isset($_POST["editcontato"])) {
     $query = "UPDATE contatos SET email='$email',nome='$nome',telefone='$tel',assunto='$assunto',mensagem='$mensagem' WHERE id_cont='$id_cont'";
     $result = mysqli_query($conn, $query);
 
-    // Definir Alerta - Operações (EDITAR/APAGAR) 
+    // Definir Alerta - Operações (EDITAR) 
     if ($conn->affected_rows > 0) {
-        $_SESSION["message"] = array(
+        $_SESSION["messagedit"] = array(
             "content" => "O contacto do email <b>" . $email . "</b> foi atualizado com sucesso!",
             "type" => "success",
         );
     } else {
-        $_SESSION["message"] = array(
+        $_SESSION["messagedit"] = array(
             "content" => "Ocorreu um erro ao atualizar o contacto do email <b>" . $email . "</b>!",
             "type" => "danger",
         );
@@ -77,7 +77,7 @@ if (isset($_POST["editcontato"])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row mb-2">
                                             <div class="col-md-6" id="name-container">
                                                 <label for="nome" class="form-label">Nome</label>
@@ -102,11 +102,11 @@ if (isset($_POST["editcontato"])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row mb-2">
                                             <div class="col-md-12" id="mensagem-container">
                                                 <label for="mensagem" class="form-label">Mensagem</label>
-                                                <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" required><?= $mensagem ?></textarea>
+                                                <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" style="resize: none" required><?= $mensagem ?></textarea>
                                                 <div id="validarfeed" class="invalid-feedback invalid-mensagem">
 
                                                 </div>
@@ -134,6 +134,7 @@ if (isset($_POST["editcontato"])) {
             } ?>
         </div>
     </div>
+    
     <!-- JQuery ativar botão editar -->
     <script>
         $(document).ready(function() {

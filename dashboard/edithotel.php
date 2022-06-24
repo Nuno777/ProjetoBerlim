@@ -13,6 +13,20 @@ if (isset($_POST["edithotel"])) {
     $quarto = $_POST["quarto"];
     $query = "UPDATE hotel SET nome='$nome',localizacao='$local',rua='$rua',quartos='$quarto' WHERE id_hotel='$id_hotel'";
     $result = mysqli_query($conn, $query);
+
+    // Definir Alerta - Operações (EDITAR) 
+    if ($conn->affected_rows > 0) {
+        $_SESSION["messagedit"] = array(
+            "content" => "O hotel <b>" . $nome . "</b> foi atualizado com sucesso!",
+            "type" => "success",
+        );
+    } else {
+        $_SESSION["messagedit"] = array(
+            "content" => "Ocorreu um erro ao atualizar o hotel <b>" . $nome . "</b>!",
+            "type" => "danger",
+        );
+    }
+
     header('Location: dashboardHoteisList.php');
 }
 ?>
@@ -86,7 +100,7 @@ if (isset($_POST["edithotel"])) {
 
                                         <div class="row">
                                             <div class="col-md-1 ">
-                                                <button class="btn btn-primary" name="edithotel" type="submit">Editar</button>
+                                                <button class="btn btn-primary" name="edithotel" id="edithotelbutton" type="submit" disabled>Editar</button>
                                             </div>
                                             <div class="col-md-1">
                                                 <a href="dashboardHoteisList.php" class="btn btn-secondary" name="voltarhotel" type="submit">Voltar</a>
@@ -105,6 +119,16 @@ if (isset($_POST["edithotel"])) {
             } ?>
         </div>
     </div>
+
+    <!-- JQuery ativar botão editar -->
+    <script>
+        $(document).ready(function() {
+            $('#edithotel').on('input change', function() {
+                $('#edithotelbutton').attr('disabled', false);
+            });
+        })
+    </script>
+
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>

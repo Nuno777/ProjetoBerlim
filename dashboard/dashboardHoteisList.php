@@ -30,6 +30,31 @@ $resultdelete = mysqli_query($conn, $query);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mt-5">
+                        <!-- Alerta - Operações (EDITAR) -->
+                        <?php
+                        if (isset($_SESSION["messagedit"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["messagedit"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["messagedit"]["content"]; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
+                                </button>
+                            </div>
+
+                        <?php unset($_SESSION["messagedit"]);
+                        }
+                        ?>
+
+                        <!-- Alerta - Operações (NEW) -->
+                        <?php
+                        if (isset($_SESSION["messagenew"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["messagenew"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["messagenew"]["content"]; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
+                                </button>
+                            </div>
+
+                        <?php unset($_SESSION["messagenew"]);
+                        }
+                        ?>
                         <div class="card">
                             <div class="card-body">
                                 <h4>Hotéis</h4>

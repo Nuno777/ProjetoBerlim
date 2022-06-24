@@ -10,6 +10,7 @@ $query = "SELECT * FROM contatos ORDER BY id_cont";
 $result = mysqli_query($conn, $query);
 $resultMenssage = mysqli_query($conn, $query);
 $resultdelete = mysqli_query($conn, $query);
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -30,16 +31,19 @@ $resultdelete = mysqli_query($conn, $query);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mt-5">
-                        <!-- Alerta - Operações (EDITAR/APAGAR) -->
+                        <!-- Alerta - Operações (EDITAR) -->
                         <?php
-                        if (isset($_SESSION["message"])) {?>
-                            <div class='alert alert-<?php echo $_SESSION["message"]["type"]?>' role='alert'>
-                                <?php echo $_SESSION["message"]["content"];?>
+                        if (isset($_SESSION["messagedit"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["messagedit"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["messagedit"]["content"]; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
+                                </button>
                             </div>
 
-                            <?php unset($_SESSION["message"]);
+                        <?php unset($_SESSION["messagedit"]);
                         }
                         ?>
+
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Contactos</h4>
@@ -70,6 +74,7 @@ $resultdelete = mysqli_query($conn, $query);
                                                     echo "<td><a data-toggle='modal' data-target='#deletecontato$row->id_cont' class='text-danger' name='delete'><i class='ti-trash'></i></a></td>";
                                                     echo "</tr>";
                                                 }
+
                                                 ?>
                                             </tbody>
                                         </table>
@@ -123,9 +128,7 @@ $resultdelete = mysqli_query($conn, $query);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                        <?php
-                        echo  "<a href='deletecontato.php?id_cont=$row->id_cont' type='button' class='btn btn-primary'>Sim</a>";
-                        ?>
+                        <a href='deletecontato.php?id_cont=<?php echo $row->id_cont ?>' type='button' class='btn btn-primary'>Sim</a>
                     </div>
                 </div>
             </div>
@@ -134,7 +137,6 @@ $resultdelete = mysqli_query($conn, $query);
     }
     ?>
     <!-- Modal para eliminar fechou -->
-
     <script src="assetsAdmin/js/vendor/jquery-2.2.4.min.js"></script>
     <script src="assetsAdmin/js/popper.min.js"></script>
     <script src="assetsAdmin/js/bootstrap.min.js"></script>

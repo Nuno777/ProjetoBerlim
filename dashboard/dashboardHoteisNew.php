@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $extensao = pathinfo($foto, PATHINFO_EXTENSION);
                 $imageDatabasePath = $diretoria_upload . sha1(microtime()) . "." . $extensao;
                 $newhotel_ficheiro = "../" . $imageDatabasePath;
-                
+
 
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $newhotel_ficheiro)) {
                     $query = "INSERT INTO `hotel` (`nome`, `localizacao`, `rua`, `quartos`, `foto_hotel`) VALUES ('$nome', '$local','$rua', '$quarto', '$imageDatabasePath')";
@@ -41,7 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $querynewhotle = $conn->query($query);
             if ($querynewhotle) {
-                header("Location: dashboardHoteis.php");
+
+                // Definir Alerta - Operações (NEW) 
+                if ($conn->affected_rows > 0) {
+                    $_SESSION["messagenew"] = array(
+                        "content" => "O post do hotel <b>" . $nome . "</b> foi criado com sucesso!",
+                        "type" => "success",
+                    );
+                } else {
+                    $_SESSION["messagenew"] = array(
+                        "content" => "Ocorreu um erro ao criado o post do hotel <b>" . $nome . "</b>!",
+                        "type" => "danger",
+                    );
+                }
+                header("Location: dashboardHoteisList.php");
                 exit(0);
             } else {
                 $code = $conn->errno;
