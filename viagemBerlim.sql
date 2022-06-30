@@ -5,13 +5,15 @@ create table adm(
 id int primary key auto_increment,
 email varchar(30) not null,
 nome varchar(50) not null,
-pass varchar(150) not null
+pass varchar(150) not null,
+permission int not null
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 create table hotel(
 id_hotel int AUTO_INCREMENT primary key,
 nome varchar(30) not null,
 localizacao varchar(30) not null,
+rua varchar(30) not null,
 quartos varchar(30) not null,
 foto_hotel varchar(250) DEFAULT NULL
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -90,7 +92,7 @@ CONSTRAINT pk_Transporte_ID_transporte PRIMARY KEY(ID_transporte)
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- dados experimentais -- 
-insert into adm (email,nome,pass) value ("admin@gmail.com","admin","c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec");
+insert into adm (email,nome,pass,permission) value ("admin@gmail.com","Admin","c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec","1");
 select * from adm;
 select * from hotel;
 select*from Cliente;

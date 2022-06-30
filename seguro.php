@@ -33,47 +33,46 @@
 
     <section class="inner-page">
       <div class="container">
-        <div class="row">
 
-          <div class="card w-75">
-            <div class="card-body">
-              <h5 class="card-title">Pacote Travel</h5>
-              <p class="card-text">Seguro básico, com a proteção de bagagens</p>
-              <ul>
-                <li class="card-text">Proteção Covid-19 incluida</li>
-                <li class="card-text">Despesas médicas e medicamentos</li>
-                <li class="card-text">Bagagem</li>
-              </ul>
-              <a href="formSeguro.php" class="btn btn-primary">Comprar: 29,99€</a>
-            </div>
-          </div>
 
-          <div class="card w-75">
-            <div class="card-body">
-              <h5 class="card-title">Pacote Travel Plus</h5>
-              <p class="card-text">Seguro que contem cancelamento ou interrupção da viagem</p>
-              <ul>
-                <li class="card-text">Proteção Covid-19 incluida</li>
-                <li class="card-text">Despesas médicas e medicamentos</li>
-                <li class="card-text">Bagagem</li>
-                <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
-              </ul>
-              <a href="formSeguro.php" class="btn btn-primary">Comprar: 34,99</a>
-            </div>
+        <div class="card w-75 row mb-2">
+          <div class="card-body">
+            <h5 class="card-title">Pacote Travel</h5>
+            <p class="card-text">Seguro básico, com a proteção de bagagens</p>
+            <ul>
+              <li class="card-text">Proteção Covid-19 incluida</li>
+              <li class="card-text">Despesas médicas e medicamentos</li>
+              <li class="card-text">Bagagem</li>
+            </ul>
+            <a href="formSeguro.php" class="btn btn-primary">Comprar: 29,99€</a>
           </div>
-          <div class="card w-75">
-            <div class="card-body">
-              <h5 class="card-title">Pacote Travel Ultra</h5>
-              <p class="card-text">Seguro que contem toda a segurança e tranqualidade</p>
-              <ul>
-                <li class="card-text">Proteção Covid-19 incluida</li>
-                <li class="card-text">Despesas médicas e medicamentos</li>
-                <li class="card-text">Bagagem</li>
-                <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
-                <li class="card-text">Cancelamento positivo Covid-19</li>
-              </ul>
-              <a href="formSeguro.php" class="btn btn-primary">Comprar: 39,99</a>
-            </div>
+        </div>
+
+        <div class="card w-75 row mb-2">
+          <div class="card-body">
+            <h5 class="card-title">Pacote Travel Plus</h5>
+            <p class="card-text">Seguro que contem cancelamento ou interrupção da viagem</p>
+            <ul>
+              <li class="card-text">Proteção Covid-19 incluida</li>
+              <li class="card-text">Despesas médicas e medicamentos</li>
+              <li class="card-text">Bagagem</li>
+              <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
+            </ul>
+            <a href="formSeguro.php" class="btn btn-primary">Comprar: 34,99</a>
+          </div>
+        </div>
+        <div class="card w-75 row mb-2">
+          <div class="card-body">
+            <h5 class="card-title">Pacote Travel Ultra</h5>
+            <p class="card-text">Seguro que contem toda a segurança e tranqualidade</p>
+            <ul>
+              <li class="card-text">Proteção Covid-19 incluida</li>
+              <li class="card-text">Despesas médicas e medicamentos</li>
+              <li class="card-text">Bagagem</li>
+              <li class="card-text">Imprevistos em viagem como cancelamento e despesas por atraso no voo</li>
+              <li class="card-text">Cancelamento positivo Covid-19</li>
+            </ul>
+            <a href="formSeguro.php" class="btn btn-primary">Comprar: 39,99</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <?php
 require_once 'conecao.php';
-$query = "SELECT * FROM hotel";
-$result = mysqli_query($conn, $query);
+$q = "SELECT * FROM hotel";
+$result = mysqli_query($conn, $q);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +18,9 @@ $result = mysqli_query($conn, $query);
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
-
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
@@ -39,30 +37,25 @@ $result = mysqli_query($conn, $query);
 
     <section class="inner-page">
       <div class="container">
-        <div class="row">
+        <div class="row ">
           <?php
           while ($row = $result->fetch_object()) {
-            //$fotohotel = $row->foto;
-            echo "<div class='col-sm-3'>";
-            echo "<div class='card' style='width: 18rem;'>";
-            echo "<img class='' alt='Image'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
-            echo "<p class='card-text'>" . $row->localizacao . "</p>";
-            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
-
-            /*echo "<div class='col-sm-4'>";
-            echo "<div class='card'>";
-            echo "<div class='card-body'>";
-            echo "<h5 class='card-title'>" . $row->nome . "</h5>";
-            echo "<p class='card-text'>Localização: " . $row->localizacao . "</p>";
-            echo "<a href='#' class='btn btn-primary'>Contactar</a>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";*/
+            $foto = $row->foto_hotel;
+            if ($foto == null) {
+              $foto = 'uploads/defaulthotel.jpg';
+            }
+          ?>
+            <div class='col-sm-3'>
+              <div class='card'>
+                <img class='card-img-top' src='<?php echo $foto ?>' alt='Image'>
+                <div class='card-body'>
+                  <h5 class='card-title'><?php echo $row->nome ?></h5>
+                  <p class='card-text'>Localização: <?php echo $row->localizacao ?></p>
+                  <a href='#' class='btn btn-primary'>Contactar</a>
+                </div>
+              </div>
+            </div>
+          <?php
           }
           ?>
         </div>

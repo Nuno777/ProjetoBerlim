@@ -16,13 +16,13 @@
       <!-- <li><a class="nav-link scrollto" href="#services">Hotéis & Restaurantes</a></li> -->
       <li class="dropdown"><a href="#"><span>Transportes</span><i class="bi"></i></a>
         <ul>
-          <li><a href="#">Transportes Públicos</a></li>
+          <li><a href="transportes.php">Transportes Públicos</a></li>
           <li><a href="seguro.php">Seguro de Viagens</a></li>
         </ul>
       </li>
-      <li><a class="nav-link scrollto" href="#">Eventos</a></li>
+      <li><a class="nav-link scrollto" href="eventos.php">Eventos</a></li>
       <li><a class="nav-link scrollto" href="contato.php">Contacto</a></li>
-      <li><a class="nav-link scrollto" href="login.php">Login</a></li>
+      <li><a class="nav-link scrollto" href="login.php" >Login</a></li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
   </nav>

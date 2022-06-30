@@ -75,49 +75,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <div class="col-md-6" id="prinome-container">
                         <label for="prinome" class="form-label">Primeiro Nome</label>
-                        <input type="text" class="form-control" id="prinome" name="prinome" required>
+                        <input type="text" class="form-control" id="prinome" name="prinome" minlength="3" maxlength="15" required>
                         <div id="validarfeed" class="invalid-feedback invalid-prinome">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="ultnome-container">
                         <label for="ultnome" class="form-label">Ultimo Nome</label>
-                        <input type="text" class="form-control" id="ultnome" name="ultnome" required>
+                        <input type="text" class="form-control" id="ultnome" name="ultnome" minlength="3" maxlength="15" required>
                         <div id="validarfeed" class="valid-feedback invalid-ultnome">
                         </div>
                     </div>
 
                     <div class="col-md-12" id="email-container">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required>
                         <div id="validarfeed" class="invalid-feedback invalid-email">
                         </div>
                     </div>
 
                     <div class="col-md-12" id="rua-container">
                         <label for="rua" class="form-label">Morada</label>
-                        <input type="text" class="form-control" id="rua" name="rua" required>
+                        <input type="text" class="form-control" id="rua" name="rua" minlength="5" maxlength="120" required>
                         <div id="validarfeed" class="valid-feedback invalid-rua">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="localidade-container">
                         <label for="localidade" class="form-label">Localidade</label>
-                        <input type="text" class="form-control" id="localidade" name="localidade">
+                        <input type="text" class="form-control" id="localidade" name="localidade" minlength="3" maxlength="25" required>
                         <div id="validarfeed" class="valid-feedback invalid-localidade">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="postal-container">
                         <label for="postal" class="form-label">Código Postal</label>
-                        <input type="text" class="form-control" id="postal" name="postal" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8">
+                        <input type="text" class="form-control" id="postal" name="postal" placeholder="0000-000" pattern="^\d{4}-\d{3}" maxlength="8" required>
                         <div id="validarfeed" class="invalid-feedback invalid-postal">
                         </div>
                     </div>
 
                     <div class="col-md-6" id="nif-container">
                         <label for="nif" class="form-label">NIF</label>
-                        <input type="text" maxlength="9" class="form-control" id="nif" name="nif">
+                        <input type="text" class="form-control" id="nif" name="nif" minlength="9" maxlength="9" required>
                         <div id="validarfeed" class="valid-feedback invalid-nif">
                         </div>
                     </div>

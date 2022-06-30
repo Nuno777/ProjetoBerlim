@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: contato.php");
         exit(0);
       } else {
-        $code = $conn->errno; 
-        $message = $conn->error; 
+        $code = $conn->errno;
+        $message = $conn->error;
         $msg_erro = "Falha na query! ($code $message)";
       }
     }
@@ -52,11 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
@@ -66,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Contacto</li>
           </ol>
         </div>
-
       </div>
     </section>
 
@@ -82,9 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
           </div>
           <div class="col-sm-4">
+            
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Telefone</h5>
+                <h5 class="bi bi-envelope" class="card-title">Telefone</h5>
                 <p class="card-text">+351 211202020</p>
               </div>
             </div>
@@ -108,40 +107,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="email-container">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required>
             <div id="validarfeed" class="invalid-feedback invalid-email">
             </div>
           </div>
 
           <div class="col-md-6" id="name-container">
             <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" required>
+            <input type="text" class="form-control" id="nome" name="nome" minlength="3" maxlength="25" required>
             <div id="validarfeed" class="invalid-feedback invalid-name">
             </div>
           </div>
 
           <div class="col-md-6" id="tel-container">
             <label for="tel" class="form-label">Telemovel <span class="span-contat">(opcional)</span></label>
-            <input type="tel" maxlength="9" class="form-control" id="tel" name="tel">
+            <input type="tel" maxlength="9" class="form-control" id="tel" name="tel" pattern="^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$">
             <div id="validarfeed" class="valid-feedback invalid-telefone">
             </div>
           </div>
 
           <div class="col-md-12" id="assunto-container">
             <label for="assunto" class="form-label">Assunto</label>
-            <input type="text" class="form-control" id="assunto" name="assunto" required>
+            <input type="text" class="form-control" id="assunto" name="assunto" minlength="3" maxlength="40" required>
             <div id="validarfeed" class="valid-feedback invalid-assunto">
             </div>
           </div>
 
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" id="mensagem" name="mensagem" required></textarea>
+            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" style="resize: none" required></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-1">
             <button class="btn btn-primary w-100" type="submit">Enviar</button>
           </div>
         </form>
@@ -154,11 +153,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'footer.php';
     ?>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -166,7 +164,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
