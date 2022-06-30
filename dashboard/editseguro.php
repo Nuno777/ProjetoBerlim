@@ -6,35 +6,31 @@ if (!isset($_SESSION['authenticated'])) {
 }
 require_once '../conecao.php';
 if (isset($_POST["editseguro"])) {
-    if ($pacote == 'Travel' || $pacote == 'Travel Plus') {
-        $IDcliente = $_POST["IDcliente"];
-        $prinome = $_POST["prinome"];
-        $ultnome = $_POST["ultnome"];
-        $email = $_POST["email"];
-        $rua = $_POST["rua"];
-        $local = $_POST["localidade"];
-        $postal = $_POST["postal"];
-        $nif = $_POST["nif"];
-        $pacote = $_POST["pacote"];
+    $IDcliente = $_POST["IDcliente"];
+    $prinome = $_POST["prinome"];
+    $ultnome = $_POST["ultnome"];
+    $email = $_POST["email"];
+    $rua = $_POST["rua"];
+    $local = $_POST["localidade"];
+    $postal = $_POST["postal"];
+    $nif = $_POST["nif"];
+    $pacote = $_POST["pacote"];
 
+    $query = "UPDATE Cliente SET nome_primeiro='$prinome',nome_ultimo='$ultnome',email='$email',rua='$rua',localidade='$local',cpostal='$postal',nif='$nif',pacote='$pacote' WHERE IDcliente='$IDcliente'";
+    $result = mysqli_query($conn, $query);
 
-        $query = "UPDATE Cliente SET nome_primeiro='$prinome',nome_ultimo='$ultnome',email='$email',rua='$rua',localidade='$local',cpostal='$postal',nif='$nif',pacote='$pacote' WHERE IDcliente='$IDcliente'";
-        $result = mysqli_query($conn, $query);
-
-        // Definir Alerta - Operações (EDITAR) 
-        if ($conn->affected_rows > 0) {
-            $_SESSION["message"] = array(
-                "content" => "O seguro do email <b>" . $email . "</b> foi atualizado com sucesso!",
-                "type" => "success",
-            );
-        } else {
-            $_SESSION["message"] = array(
-                "content" => "Ocorreu um erro ao atualizar o seguro do email <b>" . $email . "</b>!",
-                "type" => "danger",
-            );
-        }
+    // Definir Alerta - Operações (EDITAR) 
+    if ($conn->affected_rows > 0) {
+        $_SESSION["message"] = array(
+            "content" => "O seguro do email <b>" . $email . "</b> foi atualizado com sucesso!",
+            "type" => "success",
+        );
+    } else {
+        $_SESSION["message"] = array(
+            "content" => "Ocorreu um erro ao atualizar o seguro do email <b>" . $email . "</b>!",
+            "type" => "danger",
+        );
     }
-
 
     header('Location: dashboardSeguro.php');
 }
