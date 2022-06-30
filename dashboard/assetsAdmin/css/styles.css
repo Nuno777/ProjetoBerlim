@@ -11,6 +11,11 @@
     padding-left: 0;
 }
 
+.span-contat {
+    color: gray;
+    font-size: 12px;
+  }
+
 .card {
     border: none;
     border-radius: 4px;

@@ -14,7 +14,10 @@ $msg_erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($nome == "" || $local == "" || $rua == "")
-        $msg_erro = "Campos não preenchidos";
+        $_SESSION["message"] = array(
+            "content" => "Ocorreu um erro ao criado o post do hotel <b>" . $nome . "</b>!",
+            "type" => "danger",
+        );
     else {
         require_once '../conecao.php';
         if ($conn->connect_errno) {

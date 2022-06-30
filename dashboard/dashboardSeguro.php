@@ -29,6 +29,18 @@ $resultdelete = mysqli_query($conn, $query);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 mt-5">
+                        <!-- Alerta - Operações (EDITAR) -->
+                        <?php
+                        if (isset($_SESSION["message"])) { ?>
+                            <div class='alert alert-<?php echo $_SESSION["message"]["type"] ?> alert-dismissible fade show' role='alert'>
+                                <?php echo $_SESSION["message"]["content"]; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span>
+                                </button>
+                            </div>
+
+                        <?php unset($_SESSION["message"]);
+                        }
+                        ?>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">Seguro de Viagens</h4>
@@ -86,7 +98,7 @@ $resultdelete = mysqli_query($conn, $query);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                        <a href='deleteseguro.php?IDcliente=<?php echo $row->IDcliente ?>' type='button' class='btn btn-primary'>Sim</a>
+                        <a href='deleteseguro.php?IDcliente=<?php echo $row->IDcliente . '&email=' . $row->email ?>' type='button' class='btn btn-primary'>Sim</a>
                     </div>
                 </div>
             </div>

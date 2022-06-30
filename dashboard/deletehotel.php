@@ -16,7 +16,7 @@ unlink("uploads/" . $foto->foto); */
     );
 } else {
     $_SESSION["message"] = array(
-        "content" => "Ocorreu um erro ao eliminado o post do hotel <b>" . $nome . "</b>!",
+        "content" => "Ocorreu um erro ao eliminar o post do hotel <b>" . $nome . "</b>!",
         "type" => "danger",
     );
 }

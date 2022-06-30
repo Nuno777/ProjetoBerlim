@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $query);
     );
 } else {
     $_SESSION["message"] = array(
-        "content" => "Ocorreu um erro ao eliminado o contacto do email <b>" . $email . "</b>!",
+        "content" => "Ocorreu um erro ao eliminar o contacto do email <b>" . $email . "</b>!",
         "type" => "danger",
     );
 }
