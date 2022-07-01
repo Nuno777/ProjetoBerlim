@@ -2,7 +2,7 @@
 require_once 'conecao.php';
 $email = array_key_exists('email', $_POST) ? $_POST['email'] : "";
 $nome = array_key_exists('nome', $_POST) ? $_POST['nome'] : "";
-$tel = array_key_exists('tel', $_POST) ? $_POST['tel'] : "";
+$tel = $_POST['tel'];
 $assunto = array_key_exists('assunto', $_POST) ? $_POST['assunto'] : "";
 $mensagem = array_key_exists('mensagem', $_POST) ? $_POST['mensagem'] : "";
 $msg_erro = "";
@@ -52,10 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'navbar.php';
     ?>
-  </header>
+  </header><!-- End Header -->
 
   <main id="main">
 
+    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
@@ -65,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Contacto</li>
           </ol>
         </div>
+
       </div>
     </section>
 
@@ -74,16 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="bi bi-envelope" class="card-title"> Email</h5>
+                <h5 class="card-title">Email</h5>
                 <p class="card-text">supportravel@gmail.com</p>
               </div>
             </div>
           </div>
           <div class="col-sm-4">
-
             <div class="card">
               <div class="card-body">
-                <h5 class="bi bi-telephone" class="card-title"> Telefone</h5>
+                <h5 class="card-title">Telefone</h5>
                 <p class="card-text">+351 211202020</p>
               </div>
             </div>
@@ -91,21 +92,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="bi bi-map" class="card-title"> Endereço</h5>
+                <h5 class="card-title">Endereço</h5>
                 <p class="card-text">Avenida do Brasil, Lisboa</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-
-    <div class="container">
-      <div class="row">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.2355081000287!2d-9.14317268438686!3d38.758302062735766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932546ac925af%3A0x739c35077fdffb11!2sAv.%20do%20Brasil%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1656635604441!5m2!1spt-PT!2spt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-
 
     <section class="inner-page">
       <div class="container">
@@ -127,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-6" id="tel-container">
             <label for="tel" class="form-label">Telemovel <span class="span-contat">(opcional)</span></label>
-            <input type="tel" maxlength="9" class="form-control" id="tel" name="tel" pattern="^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$">
+            <input type="tel" class="form-control" id="tel" name="tel" >
             <div id="validarfeed" class="valid-feedback invalid-telefone">
             </div>
           </div>
@@ -141,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" style="resize: none" required></textarea>
+            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" required></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>
@@ -159,10 +154,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'footer.php';
     ?>
-  </footer>
+  </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -170,6 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
