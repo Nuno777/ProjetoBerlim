@@ -74,16 +74,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Email</h5>
+                <h5 class="bi bi-envelope" class="card-title"> Email</h5>
                 <p class="card-text">supportravel@gmail.com</p>
               </div>
             </div>
           </div>
           <div class="col-sm-4">
-            
+
             <div class="card">
               <div class="card-body">
-                <h5 class="bi bi-envelope" class="card-title">Telefone</h5>
+                <h5 class="bi bi-telephone" class="card-title"> Telefone</h5>
                 <p class="card-text">+351 211202020</p>
               </div>
             </div>
@@ -91,15 +91,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Endereço</h5>
+                <h5 class="bi bi-map" class="card-title"> Endereço</h5>
                 <p class="card-text">Avenida do Brasil, Lisboa</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.2355081000287!2d-9.14317268438686!3d38.758302062735766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1932546ac925af%3A0x739c35077fdffb11!2sAv.%20do%20Brasil%2C%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1656635604441!5m2!1spt-PT!2spt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
 
     <section class="inner-page">
       <div class="container">
