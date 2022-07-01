@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Email</h5>
+                <h5 class="bi bi-envelope" class="card-title"> Email</h5>
                 <p class="card-text">supportravel@gmail.com</p>
               </div>
             </div>
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <div class="card">
               <div class="card-body">
-                <h5 class="bi bi-envelope" class="card-title">Telefone</h5>
+                <h5 class="bi bi-telephone" class="card-title"> Telefone</h5>
                 <p class="card-text">+351 211202020</p>
               </div>
             </div>
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-sm-4">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Endereço</h5>
+                <h5 class="bi bi-map" class="card-title"> Endereço</h5>
                 <p class="card-text">Avenida do Brasil, Lisboa</p>
               </div>
             </div>
