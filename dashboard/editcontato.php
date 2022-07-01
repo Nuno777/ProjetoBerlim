@@ -134,7 +134,7 @@ if (isset($_POST["editcontato"])) {
             } ?>
         </div>
     </div>
-    
+
     <!-- JQuery ativar botão editar -->
     <script>
         $(document).ready(function() {
