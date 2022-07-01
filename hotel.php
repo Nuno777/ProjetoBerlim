@@ -35,16 +35,10 @@ $result = mysqli_query($conn, $q);
       </div>
     </section>
 
-    <section class="inner-page">
-      <div class="container">
+    <!-- <section class="inner-page">
+       <div class="container">
         <div class="row ">
-          <?php
-          while ($row = $result->fetch_object()) {
-            $foto = $row->foto_hotel;
-            if ($foto == null) {
-              $foto = 'uploads/defaulthotel.jpg';
-            }
-          ?>
+          
             <div class='col-sm-3'>
               <div class='card'>
                 <img class='card-img-top' src='<?php echo $foto ?>' alt='Image'>
@@ -55,11 +49,40 @@ $result = mysqli_query($conn, $q);
                 </div>
               </div>
             </div>
-          <?php
-          }
-          ?>
+          
         </div>
-      </div>
+      </div> 
+    </section>-->
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <?php
+        while ($row = $result->fetch_object()) {
+          $foto = $row->foto_hotel;
+          if ($foto == null) {
+            $foto = 'uploads/defaulthotel.jpg';
+          }
+        ?>
+          <div class="row portfolio-container">
+            <div class='col-sm-3'>
+              <div class="col-lg-4 col-md-6 portfolio-item">
+                <div class="portfolio-wrap">
+                  <img src="<?php echo $foto ?>" class="img-fluid" alt="Image">
+                  <div class="portfolio-info">
+                    <h4><?php echo $row->nome ?></h4>
+                    <p>Localização: <?php echo $row->localizacao ?></p>
+                    <div class="portfolio-links">
+                      <a href="<?php echo $foto ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?php echo $row->nome ." <br>Localização: ". $row->localizacao?>"><i class="bx bx-plus"></i></a>
+                      <a href="" title="Mais Detalhes"><i class="bx bx-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php
+        }
+          ?>
+          </div>
     </section>
 
   </main>
