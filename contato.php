@@ -2,7 +2,7 @@
 require_once 'conecao.php';
 $email = array_key_exists('email', $_POST) ? $_POST['email'] : "";
 $nome = array_key_exists('nome', $_POST) ? $_POST['nome'] : "";
-$tel = $_POST['tel'];
+$tel = array_key_exists('tel', $_POST) ? $_POST['tel'] : "";
 $assunto = array_key_exists('assunto', $_POST) ? $_POST['assunto'] : "";
 $mensagem = array_key_exists('mensagem', $_POST) ? $_POST['mensagem'] : "";
 $msg_erro = "";
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-12" id="mensagem-container">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" required></textarea>
+            <textarea class="form-control" rows="10" id="mensagem" name="mensagem" minlength="4" maxlength="500" style="resize: none" required></textarea>
             <div id="validarfeed" class="invalid-feedback invalid-mensagem">
             </div>
           </div>
