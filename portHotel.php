@@ -34,7 +34,7 @@ if ($res->num_rows) {
         <div class="d-flex justify-content-between align-items-center">
           <h2><?php echo $nome ?></h2>
           <ol>
-            <li><a href="index.php">Início</a></li>
+            <li><a href="index.php">Voltar</a></li>
             <li><?php echo $nome ?></li>
           </ol>
         </div>
@@ -42,15 +42,14 @@ if ($res->num_rows) {
       </div>
     </section>
 
-    <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
         <?php
-        while ($row = $result->fetch_object()) {
+        if ($row = $result->fetch_object()) {
           $foto = $row->foto_hotel;
-          $local=$row->localizacao;
-          $rua=$row->rua;
-          $quarto=$row->quartos;
+          $local = $row->localizacao;
+          $rua = $row->rua;
+          $quarto = $row->quartos;
           if ($foto == null) {
             $foto = 'uploads/defaulthotel.jpg';
           }
@@ -71,7 +70,7 @@ if ($res->num_rows) {
             </div>
 
             <div class="col-lg-4">
-              
+
               <div class="portfolio-info">
                 <ul>
                   <li><strong>Localização</strong>: <?php echo $local ?></li>
@@ -88,6 +87,8 @@ if ($res->num_rows) {
             </div>
           </div>
         <?php
+        } else {
+          echo "<script>alert('Selecione um Hotel valido');window.location='hotel.php'</script>";
         }
         ?>
       </div>
