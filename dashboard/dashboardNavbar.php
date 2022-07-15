@@ -41,9 +41,6 @@ if ($queryadm->num_rows) {
                                 <a href="dashboard.php"><span>Dashboard</span></a>
                             </li>
                             <li>
-                                <a href=""><span>Monumentos</span></a>
-                            </li>
-                            <li>
                                 <a><span>Hotéis & Restaurantes</span></a>
                                 <ul class="submenu">
                                     <li><a href="dashboardHoteis.php">Hotéis</a></li>

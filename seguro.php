@@ -35,7 +35,7 @@
       <div class="container">
 
 
-        <div class="card w-75 row mb-2">
+        <div class="card row mb-2">
           <div class="card-body">
             <h5 class="card-title">Pacote Travel</h5>
             <p class="card-text">Seguro básico, com a proteção de bagagens</p>
@@ -48,7 +48,7 @@
           </div>
         </div>
 
-        <div class="card w-75 row mb-2">
+        <div class="card row mb-2">
           <div class="card-body">
             <h5 class="card-title">Pacote Travel Plus</h5>
             <p class="card-text">Seguro que contem cancelamento ou interrupção da viagem</p>
@@ -61,7 +61,7 @@
             <a href="formSeguro.php" class="btn btn-primary">Comprar: 34,99</a>
           </div>
         </div>
-        <div class="card w-75 row mb-2">
+        <div class="card row mb-2">
           <div class="card-body">
             <h5 class="card-title">Pacote Travel Ultra</h5>
             <p class="card-text">Seguro que contem toda a segurança e tranqualidade</p>

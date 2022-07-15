@@ -25,22 +25,8 @@
           <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="contato.php">Contacto</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">Termos e Condições</a></li>
-          <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Política de Privacidade</a></li> -->
         </ul>
       </div>
-      <!-- <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Web
-                    Development</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Product
-                    Management</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic
-                    Design</a></li>
-              </ul>
-            </div> -->
       <div class="col-lg-4 col-md-6 footer-newsletter">
         <h4>Livro De Reclamações</h4>
         <br>

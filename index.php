@@ -32,22 +32,27 @@
           <div class="section-title" data-aos="fade-up">
             <h2>Hotéis & Restaurantes</h2>
           </div>
-
-          <div class="card row mb-2" data-aos="fade-up">
-            <div class="card-body">
-              <h5 class="card-title">Hotéis</h5>
-              <p class="card-text">Quer conhecer um pouco mais sobre os vários hotéis disponíveis.</p>
-              <p class="card-text">Basta clicar no botão abaixo!</p>
-              <a href="hotel.php" class="btn btn-outline-primary">Visitar Hotéis</a>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <h5 class="card-title">Hotéis</h5>
+                  <p class="card-text">Quer conhecer um pouco mais sobre os vários hotéis disponíveis.</p>
+                  <p class="card-text">Basta clicar no botão abaixo!</p>
+                  <a href="hotel.php" class="btn btn-outline-primary">Visitar Hotéis</a>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="card row mb-2" data-aos="fade-up">
-            <div class="card-body">
-              <h5 class="card-title">Restaurantes</h5>
-              <p class="card-text">Quer ficar a conhecer um pouco mais sobre os vários tipos de restaurantes disponíveis.</p>
-              <p class="card-text">Basta clicar no botão abaixo!</p>
-              <a href="" class="btn btn-outline-primary">Visitar Restaurantes</a>
+            <div class="col-sm-6">
+              <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                  <h5 class="card-title">Restaurantes</h5>
+                  <p class="card-text">Quer conhecer um pouco mais sobre os vários tipos de restaurantes disponíveis.</p>
+                  <p class="card-text">Basta clicar no botão abaixo!</p>
+                  <a href="" class="btn btn-outline-primary">Visitar Restaurantes</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
