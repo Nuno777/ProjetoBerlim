@@ -52,11 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'navbar.php';
     ?>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
@@ -66,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <li>Contacto</li>
           </ol>
         </div>
-
       </div>
     </section>
 
@@ -108,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
 
+
     <section class="inner-page">
       <div class="container">
         <form id="cont" action="contato.php" method="POST" class="row g-3" enctype="multipart/form-data">
@@ -128,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
           <div class="col-md-6" id="tel-container">
             <label for="tel" class="form-label">Telemovel <span class="span-contat">(opcional)</span></label>
-            <input type="tel" class="form-control" id="tel" name="tel" >
+            <input type="tel" maxlength="9" class="form-control" id="tel" name="tel" pattern="^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$">
             <div id="validarfeed" class="valid-feedback invalid-telefone">
             </div>
           </div>
@@ -160,11 +159,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php
     require_once 'footer.php';
     ?>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -172,7 +170,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>

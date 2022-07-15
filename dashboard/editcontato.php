@@ -87,8 +87,8 @@ if (isset($_POST["editcontato"])) {
                                             </div>
 
                                             <div class="col-md-6" id="tel-container">
-                                                <label for="tel" class="form-label">Telemovel</label>
-                                                <input type="tel" class="form-control" id="tel" name="tel" value="<?= $tel ?>" pattern="^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$">
+                                                <label for="tel" class="form-label">Telemovel <span class="span-contat">(opcional)</span></label>
+                                                <input type="tel" maxlength="9" class="form-control" id="tel" name="tel" value="<?= $tel ?>" pattern="^9[1236][0-9]{7}$|^2[3-9][1-9][0-9]{6}$|^2[12][0-9]{7}$">
                                                 <div id="validarfeed" class="valid-feedback invalid-telefone">
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@ if (isset($_POST["editcontato"])) {
             } ?>
         </div>
     </div>
-
+    
     <!-- JQuery ativar botão editar -->
     <script>
         $(document).ready(function() {
