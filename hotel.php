@@ -51,7 +51,7 @@ $result = mysqli_query($conn, $query);
                 <div class='card-body'>
                   <h5 class='card-title'><?php echo $row->nome ?></h5>
                   <p class='card-text'>Localização: <?php echo $row->localizacao ?></p>
-                  <a href='portHotel.php' class='btn btn-primary'>Contactar</a>
+                  <a href='portHotel.php?id_hotel=<?php echo $row->id_hotel ?>' class='btn btn-primary'>Contactar</a>
                 </div>
               </div>
             </div>

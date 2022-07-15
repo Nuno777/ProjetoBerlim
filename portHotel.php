@@ -1,9 +1,11 @@
 <?php
 require_once 'conecao.php';
-$query = "SELECT * FROM hotel";
+$id_hotel = $_GET["id_hotel"];
+$query = "SELECT * FROM hotel WHERE id_hotel='$id_hotel'";
+$res = mysqli_query($conn, $query);
 $result = mysqli_query($conn, $query);
-if ($result->num_rows) {
-  $row = $result->fetch_object();
+if ($res->num_rows) {
+  $row = $res->fetch_object();
   $nome = $row->nome;
 }
 ?>
@@ -30,7 +32,7 @@ if ($result->num_rows) {
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Hotéis</h2>
+          <h2><?php echo $nome ?></h2>
           <ol>
             <li><a href="index.php">Início</a></li>
             <li><?php echo $nome ?></li>
@@ -43,48 +45,51 @@ if ($result->num_rows) {
     <!-- ======= Portfolio Details Section ======= -->
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
+        <?php
+        while ($row = $result->fetch_object()) {
+          $foto = $row->foto_hotel;
+          $local=$row->localizacao;
+          $rua=$row->rua;
+          $quarto=$row->quartos;
+          if ($foto == null) {
+            $foto = 'uploads/defaulthotel.jpg';
+          }
+        ?>
+          <div class="row gy-4">
 
-        <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper">
+                <div class="swiper-wrapper align-items-center">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img src="<?php echo $foto ?>" alt="Image">
+                  </div>
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
                 </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
-                </div>
-
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
-                </div>
-
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
+            <div class="col-lg-4">
+              
+              <div class="portfolio-info">
+                <ul>
+                  <li><strong>Localização</strong>: <?php echo $local ?></li>
+                  <li><strong>Rua</strong>: <?php echo $rua ?></li>
+                  <li><strong>Tipo de Quarto</strong>: <?php echo $quarto ?></li>
+                </ul>
+              </div>
+              <div class="portfolio-description">
+                <h2>This is an example of portfolio detail</h2>
+                <p>
+                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        <?php
+        }
+        ?>
       </div>
     </section>
 
