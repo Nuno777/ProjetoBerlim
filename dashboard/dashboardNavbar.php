@@ -40,12 +40,8 @@ if ($queryadm->num_rows) {
                             <li>
                                 <a href="dashboard.php"><span>Dashboard</span></a>
                             </li>
-                            <li>
-                                <a><span>Hotéis & Restaurantes</span></a>
-                                <ul class="submenu">
-                                    <li><a href="dashboardHoteis.php">Hotéis</a></li>
-                                    <li><a href="">Restaurantes</a></li>
-                                </ul>
+                            <li class="mega-menu">
+                                <a href="dashboardHoteis.php"><span>Hotéis</span></a>
                             </li>
                             <li>
                                 <a><span>Transportes</span></a>

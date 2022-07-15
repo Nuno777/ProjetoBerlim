@@ -30,21 +30,18 @@
       <div class="container">
         <div class="row">
           <div class="section-title" data-aos="fade-up">
-            <h2>Hotéis & Restaurantes</h2>
+            <h2>Hotéis</h2>
           </div>
           <div class="row">
             <div class="col-sm-12">
               <div class="card" data-aos="fade-up">
                 <div class="card-body">
-                  <h5 class="card-title">Hotéis</h5>
                   <p class="card-text">Quer conhecer um pouco mais sobre os vários hotéis disponíveis.</p>
-                  <p class="card-text">Basta clicar no botão abaixo!</p>
+                  <p class="card-text">Temos vários hotéis que podem agradar para si, basta ir na aba <b>Hotéis</b> ou então clicar no botão em baixo!</p>
                   <a href="hotel.php" class="btn btn-outline-primary">Visitar Hotéis</a>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -58,7 +55,6 @@
         <div class="row">
 
           <div class="col-md-4  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up">
-
             <div class="icon-box icon-box-pink">
               <h4 class="title">Pacote Travel</h4>
               <p class="description">Seguro básico, com a proteção de bagagens.</p>
@@ -86,38 +82,23 @@
       </div>
     </section>
 
-    <section id="steps" class="steps section-bg">
+    <section id="steps" class="steps ">
       <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Eventos</h2>
+        </div>
         <div class="row no-gutters">
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in">
-            <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <h4>Berliner Filmfestspiele</h4>
+            <p>Berliner Filmfestspiele, chama artistas de todo o mundo para o grande festival de cinema . <br>É um evento espetacular, <a href="eventos.php">clica para saber mais.</a></p>
           </div>
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
-            <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            <h4>Festival das Luzes</h4>
+            <p>Festival das Luzes, vários edifícios da cidade ficam iluminados. <br> É um evento espetacular, <a href="eventos.php">clica para saber mais.</a></p>
           </div>
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="200">
-            <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
-          </div>
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="300">
-            <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
-          </div>
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="400">
-            <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="500">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
+          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-in" data-aos-delay="100">
+            <h4>Grüne Woche</h4>
+            <p>Grüne Woche, “Semana Verde” e uma feira agrícola e tem ênfase na gastronomia. <br>É um evento espetacular, <a href="eventos.php">clica para saber mais.</a></p>
           </div>
         </div>
       </div>
