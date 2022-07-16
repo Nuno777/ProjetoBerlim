@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Seguro de Viagens</title>
+    <title>Eventos</title>
     <?php
     require_once 'head.php';
     ?>
